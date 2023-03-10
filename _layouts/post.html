@@ -1,0 +1,43 @@
+---
+layout: default
+title: page.title
+---
+
+<article>
+    {% assign cover = page.picture %}
+
+    <section class="bg-white dark:bg-customDark pt-10 lg:py-20 xl:py-24">
+        <div class="container max-w-screen-lg mx-auto">
+            <header class="flex flex-col items-center text-center px-10 lg:px-0">
+                <h1 class="text-customDark dark:text-customLightBlue text-4xl lg:text-5xl xl:text-6xl font-bold lg:font-extrabold tracking-tight mb-4 leading-tight">
+                    {{ page.title }}
+                </h1>
+            </header>
+        </div>
+    </section>
+
+    {% if cover %}
+    <div class="w-full max-h-screen overflow-hidden bg-cover bg-center bg-no-repeat" style="background-image: url('{{ cover }}');">
+        <img class="lg:invisible w-full max-w-full h-auto max-h-full object-cover" src="{{ cover }}" alt="{{ page.title }}" title="{{ page.title }}" />
+    </div>
+    {% endif %}
+
+    <div class="post-body py-10 lg:pb-20 px-10 lg:px-0">
+        <div class="container max-w-screen-lg mx-auto lg:flex lg:flex-row">
+            {% include widgets/share.html %}
+            <div class="w-full max-w-screen-md mx-auto pt-4 lg:pt-0 space-y-10">
+                <div class="text-lg lg:text-xl text-gray-500">
+                    {{ page.date | date: '%B %d, %Y' }}
+                </div>
+                {% if page.toc == true %}
+                <div class="py-4 lg:pb-10">
+                    {% include toc.html html=content %}
+                </div>
+                {% endif %}
+                <div class="prose dark:prose-invert lg:prose-lg">
+                    {{ page.content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

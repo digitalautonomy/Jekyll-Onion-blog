@@ -1,0 +1,32 @@
+titles:
+  home: Inicio
+  about: Acerca de
+  blog: Blog
+  projects: Proyectos
+
+greets: ¡Hola Mundo Docker!
+
+site:
+  description: Alguna descripción cautivadora.
+  slogan: Una frase como slogan.
+
+urls:
+  about: /es/about.html
+  blog: /es/blog.html
+  projects: /es/projects.html
+
+projects:
+  first_project:
+    title: Un atractivo título
+    description: Algo que decir acerca de este proyecto
+  second_project:
+    title: El título del nuevo proyecto
+    description: Un texto interesante
+
+labels:
+  featured: Destacado
+  share_in_twitter: Compartir en Twitter
+  share_in_facebook: Compartir en Facebook
+  share_via_email: Compartir por correo electrónico
+  share_email_body: Mira este artículo que encontré en el blog de Estupinan Art
+  galleries: Visita nuestras galerías

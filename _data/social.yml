@@ -1,0 +1,9 @@
+- name: Twitter
+  slug: twitter
+  url: twitter account url
+  icon: icon-twitter.svg
+
+- name: Instagram
+  slug: instagram
+  url: instagram account url
+  icon: icon-instagram.svg

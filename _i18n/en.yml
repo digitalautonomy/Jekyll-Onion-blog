@@ -1,0 +1,32 @@
+titles:
+  home: Home
+  about: About
+  blog: Blog
+  projects: Projects
+
+greets: Hello Docker world!
+
+site:
+  description: Some enjoyable description.
+  slogan: A phrase as slogan.
+
+urls:
+  about: /about.html
+  blog: /blog.html
+  projects: /projects.html
+
+projects:
+  first_project:
+    title: A engagement title
+    description: What about this project
+  second_project:
+    title: A new title project
+    description: An interesting text
+
+labels:
+  featured: Featured
+  share_in_twitter: Share in Twitter
+  share_in_facebook: Share in Facebook
+  share_via_email: Share via Email
+  share_email_body: Check out this article I found on the Estupinan Art blog
+  galleries: Visit our galleries

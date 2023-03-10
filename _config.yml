@@ -1,0 +1,62 @@
+title: Some beautiful little title
+title_split: Some|beautiful|little|title
+brand: BRAND
+#host: https://thesite.something
+email: contact@thesite.something
+encoding: utf-8
+future: true
+dev_host: http://localhost:4000
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+twitter_username: twitter_user
+github_username:  github_user
+
+# Licence
+license:
+  name: Creative Commons Attribution 4.0 International (CC BY 4.0)
+  url: https://creativecommons.org/licenses/by/4.0/
+
+# Location
+languages: ["en", "es"]
+default_language: "en"
+exclude_from_localizations: ["javascript", "images", "css"]
+
+plugins:
+    - jekyll-feed
+    - jekyll-multiple-languages-plugin
+    - jekyll-paginate-v2
+    - jekyll-inline-svg
+    - jekyll-postcss
+
+autopages:
+  enabled: true
+  tags:
+    layouts:
+      - autopage_tags.html
+    tag: ':tag'
+    enabled: true
+  collections:
+    enabled: false
+
+# Exclude from processing.
+# The following items will not be processed
+exclude:
+   - .sass-cache/
+   - .jekyll-cache/4res
+   - Gemfile
+   - Gemfile.lock
+   - node_modules/
+   - vendor/bundle/
+   - vendor/cache/
+   - vendor/gems/
+   - vendor/ruby/
+   - assets/css/tailwind.scss
+
+keep_files:
+  - assets/css/tailwind.css
+  - assets/css/tailwind.css.map
+
+pagination:
+  enabled: false

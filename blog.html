@@ -1,0 +1,18 @@
+---
+layout: default
+title: titles.blog
+---
+
+{% include partials/featured-post.html %}
+
+<div class="bg-white dark:bg-customDark relative z-0">
+    <div class="container max-w-screen-lg mx-auto">
+        <div class="py-10 lg:py-16 grid grid-cols-1 gap-10">
+            {% for post in site.posts %}
+            <div class="flex px-10 lg:px-0">
+                {%- include partials/post-preview.html -%}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

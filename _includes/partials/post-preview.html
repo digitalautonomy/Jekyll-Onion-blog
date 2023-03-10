@@ -1,0 +1,33 @@
+{% capture picture %}
+    {% if post.picture %}
+        {{ post.picture }}
+    {% else %}
+        {{ '/assets/images/generic-pic-post.jpg' | append: site.baseurl_root }}
+    {% endif %}
+{% endcapture %}
+<article class="post w-full">
+    <div class="grid grid-cols-1 md:grid-cols-12 w-full gap-10">
+        <div class="md:col-span-4 lg:col-span-5">
+            <a class="md:flex w-full bg-yellow-300 md:h-full md:bg-center md:bg-cover rounded-lg xl:rounded-xl" href="{{ site.baseurl }}{{ post.url }}" style="background-image: url('{{ picture }}');">
+                <img src="{{ picture }}" width="290" height="300" class="w-full max-w-full h-auto object-cover md:hidden" />
+            </a>
+        </div>
+        <div class="md:col-span-8 lg:col-span-7">
+            <div class="flex flex-col py-4 md:h-full md:justify-center lg:py-10 space-y-6">
+                <div class="space-y-2">
+                    <h3 class="text-lg lg:text-xl xl:text-3xl font-semibold lg:font-bold lg:tracking-tight">
+                        <a href="{{ site.baseurl }}{{ post.url }}" class="hover:underline" role="bookmark">
+                            {{ post.title }}
+                        </a>
+                    </h3>
+                    <div class="text-sm text-gray-500 font-medium">
+                        {{ post.date | date: "%B %-d, %Y" }}
+                    </div>
+                </div>
+                <div class="text-customDark dark:text-customLightBlue leading-relaxed text-lg">
+                    {{ post.excerpt | strip_html | truncatewords: 15 }}
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

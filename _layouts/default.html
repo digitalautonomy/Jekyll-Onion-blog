@@ -1,0 +1,15 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body class="bg-customGray dark:bg-customDark text-customDark dark:text-customLightBlue ">
+        {% include header.html %}
+        <div class="text-customDark dark:text-customLightBlue">
+            {{ content }}
+        </div>
+        {% include footer.html %}
+    </body>
+</html>

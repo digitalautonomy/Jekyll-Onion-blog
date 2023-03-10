@@ -1,0 +1,13 @@
+<ul class="flex flex-col lg:flex-row lg:items-center lg:px-4 lg:mr-6 w-full lg:flex-auto">
+    {% for lang in site.languages %}
+        <li>
+            {% assign lang_slug = "/" | append: lang %}
+            {% if lang == site.default_language %}
+                {% assign lang_slug = "" %}            
+            {% endif %}
+            <a class="flex rounded px-4 py-2 leading-2 lg:leading-6 lg:py-1 lg:-mx-1 {% if lang == site.lang %} cursor-default font-medium {% else %} text-gray-500 hover:bg-black hover:text-gray-100 hover:shadow rounded-full{% endif %}" href="{{ lang_slug }}{{ page.url }}">
+                {{ site.data.languages[lang].name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

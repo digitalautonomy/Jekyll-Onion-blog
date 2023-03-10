@@ -1,0 +1,5 @@
+- title: projects.first_project.title
+  description: projects.first_project.description
+
+- title: projects.second_project.title
+  description: projects.second_project.description

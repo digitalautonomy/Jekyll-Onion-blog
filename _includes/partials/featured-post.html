@@ -1,0 +1,31 @@
+{% for page in site.posts limit:1 %}
+{% if page.intro %}
+{% assign excerpt = page.intro %}
+{% else %}
+{% assign excerpt = page.excerpt %}
+{% endif %}
+<section class="bg-white dark:bg-customDark shadow-xs relative z-10 py-10 lg:py-20 px-10">
+    <div class="container max-w-screen-lg mx-auto lg:py-10">
+        <div class="text-center flex flex-col items-center space-y-10">
+            <header class="flex flex-col items-center">
+                <span class="inline-flex uppercase leading-tight px-4 py-1 lg:py-2 bg-yellow-300 text-black text-base font-semibold lg:font-bold tracking-wide rounded-full mb-2">
+                    {% t labels.featured %}
+                </span>
+                <h1 class="text-4xl lg:text-6xl text-customDark dark:text-customLightBlue font-bold py-2 leading-normal lg:font-black lg:tracking-tight">
+                    <a class="block leading-tight hover:underline lg:leading-none" href="{{ site.baseurl }}{{ page.url }}" rel="bookmark">
+                        {{ page.title }}
+                    </a>
+                </h1>
+            </header>
+            {% if page.picture %}
+            <div class="w-full justify-center">
+                <img class="mx-auto block max-w-full h-auto rounded-lg xl:rounded-xl" src="{{ page.picture }}" alt="{{ page.title }}" />
+            </div>
+            {% endif %}
+            <div class="text-lg leading-10 lg:text-xl">
+                {{ excerpt }}
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}

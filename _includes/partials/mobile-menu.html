@@ -1,0 +1,9 @@
+<!-- Mobile Menu -->
+<div id="menu" class="absolute top-0 bottom-0 left-0 hidden flex-col self-end hidden w-full min-h-screen py-1 pt-40 pl-12 space-y-3 text-lg text-customDark dark:text-customLightBlue uppercase bg-white dark:bg-customDark">
+    {% for item in site.data.navigation %}
+    <a href="{{ site.baseurl }}{{ item.url }}" rel="noopener noreferrer" class="hover:text-customDarkYellow">
+        {% t item.title %}
+    </a>
+    {% endfor %}
+</div>
+<script src="/assets/js/mobileMenu-bundle.js" defer></script>

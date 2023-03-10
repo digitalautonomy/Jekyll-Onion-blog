@@ -1,0 +1,12 @@
+{% for item in site.data.navigation %}
+<div class="group">
+    <a class="flex items-center px-4 py-4 md:py-1 space-x-6 font-large
+    rounded-lg text-customDark dark:text-white md:-mx-1{% if page.url == item.url %} cursor-default{% else %} {% endif %}"
+       href="{{ site.baseurl }}{{ item.url }}" rel="noopener noreferrer">
+        <div class="flex items-center w-24">
+            {% t item.title %}
+        </div>
+    </a>
+    <div class="mx-2 group-hover:border-b group-hover:border-customLightBlue"></div>
+</div>
+{% endfor %}

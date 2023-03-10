@@ -1,0 +1,29 @@
+{% capture page_title %}
+{% if page.title contains '.' %}
+{% t page.title %}
+{% else %}
+{{ page.title }}
+{% endif %}
+{% endcapture %}
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page_title }} | {{ site.title }}</title>
+  <meta name="description" content="{% t site.description %}" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@twitter_account" />
+  <meta name="twitter:creator" content="@twitter_developer" />
+  <meta property="og:title" content="{{ site.title }} | {% t site.slogan %}" />
+  <meta property="og:description" content="{% t site.description %}" />
+  <meta property="og:url" content="{{ site.relative_url }}" />
+  <meta property="og:title" content="{{ site.title }} | {% t site.slogan %}" />
+  <meta property="og:description" content="{% t site.description %}" />
+  <meta name="msapplication-TileColor" content="#ffe600" />
+  <meta name="theme-color" content="#ffe600">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,400;1,200;1,400&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>

@@ -1,0 +1,1 @@
+Algún texto que describa el por qué y para qué del sitio

@@ -1,0 +1,30 @@
+<div class="container max-w-6xl mx-auto px-6 py-4 bg-white dark:bg-customDark">
+  <nav class="flex items-center justify-between font-bold text-customDark dark:text-white">
+    <div class="flex flex-col items-center px-4">
+      <div class="flex flex-col items-center px-4 rounded-full p-2">
+        <p>
+          Some logo
+        </p>
+      </div>
+
+    </div>
+    <div class="hidden h-10 md:flex md:space-x-8">
+      {% include partials/main-menu.html %}
+    </div>
+    <div class="py-6 flex items-center justify-center">
+      {% include partials/social.html %}
+    </div>
+    <div>
+      {% include partials/language-switcher.html %}
+    </div>
+    <!-- Hamburger Menu -->
+    <div class="md:hidden">
+      <button id="menu-btn" type="button" class="z-40 block hamburger md:hidden focus:outline-none">
+        <span class="hamburger-top bg-customLightBlue dark:bg-white"></span>
+        <span class="hamburger-middle bg-customLightBlue dark:bg-white"></span>
+        <span class="hamburger-bottom bg-customLightBlue dark:bg-white"></span>
+      </button>
+    </div>
+  </nav>
+  {% include partials/mobile-menu.html %}
+</div>
