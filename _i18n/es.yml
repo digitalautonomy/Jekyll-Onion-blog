@@ -1,7 +1,6 @@
 titles:
   home: Inicio
   blog: Blog
-  projects: Proyectos
 
 greets: ¡Hola Mundo Docker!
 
@@ -11,15 +10,6 @@ site:
 
 urls:
   blog: /es/blog.html
-  projects: /es/projects.html
-
-projects:
-  first_project:
-    title: Un atractivo título
-    description: Algo que decir acerca de este proyecto
-  second_project:
-    title: El título del nuevo proyecto
-    description: Un texto interesante
 
 labels:
   featured: Destacado

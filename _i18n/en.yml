@@ -1,7 +1,6 @@
 titles:
   home: Home
   blog: Blog
-  projects: Projects
 
 greets: Hello Docker world!
 
@@ -11,15 +10,6 @@ site:
 
 urls:
   blog: /blog.html
-  projects: /projects.html
-
-projects:
-  first_project:
-    title: A engagement title
-    description: What about this project
-  second_project:
-    title: A new title project
-    description: An interesting text
 
 labels:
   featured: Featured
