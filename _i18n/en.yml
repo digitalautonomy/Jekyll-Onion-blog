@@ -2,8 +2,6 @@ titles:
   home: Home
   blog: Blog
 
-greets: Hello Docker world!
-
 site:
   description: Some enjoyable description.
   slogan: A phrase as slogan.
