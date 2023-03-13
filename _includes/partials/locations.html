@@ -1,21 +1,15 @@
 {% for location in site.data.locations %}
 <div class="py-2">
     <div class="location-item">
-        <img src="/assets/images/icons/address.svg" alt="" class="w-[18px]" />
-        <p>
-            {{ location.address }}
-        </p>
-    </div>
-    <div class="location-item">
-        <img src="/assets/images/icons/phone.svg" alt="" class="w-[18px]" />
-        <p>
-            {{ location.phone }}
-        </p>
-    </div>
-    <div class="location-item">
         <img src="/assets/images/icons/mail.svg" alt="" class="w-[18px]" />
         <p>
             {{ location.email }}
+        </p>
+    </div>
+    <div class="location-item">
+        <img src="/assets/images/icons/icon-gnupg.svg" alt="" class="w-[18px]" />
+        <p>
+            {{ location.gpg }}
         </p>
     </div>
 </div>
