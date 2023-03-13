@@ -1,7 +1,7 @@
 # Desplegando un blog anónimo en servicios Onion
 
 En este repositorio recopilamos la información necesaria para crear un blog anónimo en una placa Raspberry Pi o un computador viejo.
-El resultado será un blog publicado en la red Tor que podrá ser accedido por cualquier persona usando el [navegador Tor](https://www.torproject.org/download/).
+El resultado será un blog publicado en la red Tor que podrá ser accedido por cualquier persona usando el navegador [Tor](https://www.torproject.org/download/).
 
 ## Materiales
 
@@ -9,7 +9,7 @@ El resultado será un blog publicado en la red Tor que podrá ser accedido por c
 
     Cualquiera de las placas disponibles funciona, sin embargo, las más baratas tienen menor capacidad de cómputo y menor número de puertos USB.
 
-2. Computadora 
+2. Computadora
 
     Para ayudar en la configuración del servidor en la Raspberry Pi.
 
@@ -17,7 +17,11 @@ El resultado será un blog publicado en la red Tor que podrá ser accedido por c
 
 4. Monitor
 
-5. Cables
+5. Micro SD
+
+    Esta será la tarjeta de memoria de la Raspberry Pi, para nuestro proyecto ?GB es suficiente.
+
+6. Cables
 
     1. Adaptador de corriente
 
@@ -35,15 +39,20 @@ El resultado será un blog publicado en la red Tor que podrá ser accedido por c
 
 Si esta es la primera vez que usas tu Raspberry Pi, sigue estas instrucciones para configurarla:
 
-1. Descarga el instalador de Raspberry Pi OS en
+1. Descarga el instalador de Raspberry Pi OS en [https://www.raspberrypi.org/](https://www.raspberrypi.org/).
 
- [Raspberry Pi](https://www.raspberrypi.org/).
+2. Conecta la microSD a tu computador.
 
-### Versiones de las placas
+3. Ejecuta el instalador.
+    1. Escoge la versión de Raspberry Pi OS a instalar.
+        
+        Para este proyecto la versión Raspberry Pi OS Lite (Legacy) es apropiada.
 
-### Raspberry Pi OS
+    2. Escoge la microSD como la unidad de memoria.
 
-### Instalación
+    3. Haz click en 'Write' y espera a que termine.
+
+4. Inserta la microSD en la ranura correspondiente de la Raspberry Pi.z
 
 ## Comunicarse con la Raspberry Pi
 
