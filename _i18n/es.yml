@@ -11,7 +11,5 @@ urls:
 
 labels:
   featured: Destacado
-  share_in_twitter: Compartir en Twitter
-  share_in_facebook: Compartir en Facebook
   share_via_email: Compartir por correo electrónico
   share_email_body: Mira este artículo que encontré

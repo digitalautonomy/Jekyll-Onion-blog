@@ -11,7 +11,5 @@ urls:
 
 labels:
   featured: Featured
-  share_in_twitter: Share in Twitter
-  share_in_facebook: Share in Facebook
   share_via_email: Share via Email
   share_email_body: Check out this article I found
