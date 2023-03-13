@@ -1,60 +1,43 @@
-# Desplegando un blog anónimo con Raspberry Pi y servicios Onion
+# Desplegando un blog anónimo en servicios Onion
 
-En este repositorio recopilamos la información necesaria para crear un blog anónimo con una placa Raspberry Pi y una computadora. Se necesitarán algunos elementos adicionales (listados abajo) y el resultado será publicar el blog en la red Tor, que puede ser accedida por cualquier persona usando el [navegador Tor](https://www.torproject.org/download/).
+En este repositorio recopilamos la información necesaria para crear un blog anónimo en una placa Raspberry Pi o un computador viejo.
+El resultado será un blog publicado en la red Tor que podrá ser accedido por cualquier persona usando el [navegador Tor](https://www.torproject.org/download/).
 
-## ¿Qué se necesita para completar el proyecto?
+## Materiales
 
-### Placa Raspberry Pi
+1. Placa Raspberry Pi
 
-Este es el elemento principal, y el que costará más. La placa tendrá que usarse como una computadora al principio, así que se requiere de una Raspberry Pi 1, 2, 3 o 4.
+    Cualquiera de las placas disponibles funciona, sin embargo, las más baratas tienen menor capacidad de cómputo y menor número de puertos USB.
 
-Las Raspberry Pi Pico o Raspberry Pi Zero no servirán para este proyecto, pues la tarjeta que se utilice requiere poder ser usada como una computadora y con estas será mucho más difícil.
+2. Computadora 
 
-#### Adaptador de corriente para Raspberry Pi
+    Para ayudar en la configuración del servidor en la Raspberry Pi.
 
-Lo más apropiado es comprar tu Raspberry Pi con un adaptador de corriente, de forma que al adquirirlo te asegures de que funciona para la que adquiriste. Sin embargo, y si este no es el caso, hay dos casos dependiendo de la Raspberry Pi que tengas:
+3. Teclado
 
-##### Raspberry Pi 1, 2 o 3
+4. Monitor
 
-Estas Raspberry Pi se conectan a su adaptador de corriente a través de un puerto MicroUSB, que lucen así:
+5. Cables
 
-![Conexión MicroUSB](https://imgur.com/a/kCT0KJg)
+    1. Adaptador de corriente
 
-##### Raspberry Pi 4
+        Para Raspberry Pi 2 o 3, consigue un cable con puerto MicroUSB.
 
-Esta versión se conecta a la corriente a través de un puerto USB-C, que luce así:
+        Para Raspberry Pi 4, consigue un cable con puerto USB-C.
 
-### Computadora 
+    2. Cable de red
 
+    3. Adaptador USB a tarjeta microSD
 
+    4. Cable HDMI
 
-### Teclado
+## Instalar Raspberry Pi OS en la Raspberry Pi
 
+Si esta es la primera vez que usas tu Raspberry Pi, sigue estas instrucciones para configurarla:
 
+1. Descarga el instalador de Raspberry Pi OS en
 
-### Monitor
-
-
-
-### Cables
-
-
-
-#### Cable de red
-
-
-
-#### Adaptador USB a tarjeta SD
-
-
-
-#### Cable HDMI
-
-
-
-## Configurando Raspberry Pi
-
-Vamos a configurar una placa [Raspberry Pi](https://www.raspberrypi.org/) para que con ella podamos publicar un blog a través de la red Tor, que va a ayudar a proteger la identidad del anfitrión.
+ [Raspberry Pi](https://www.raspberrypi.org/).
 
 ### Versiones de las placas
 
@@ -62,7 +45,7 @@ Vamos a configurar una placa [Raspberry Pi](https://www.raspberrypi.org/) para q
 
 ### Instalación
 
-## Comunicándose con la Raspberry Pi
+## Comunicarse con la Raspberry Pi
 
 ### Habilitando SSH en Raspberry Pi
 
