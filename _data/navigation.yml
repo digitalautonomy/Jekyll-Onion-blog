@@ -1,9 +1,6 @@
 - title: titles.home
   url: /
 
-- title: titles.about
-  url: /about.html
-
 - title: titles.blog
   url: /blog.html
 

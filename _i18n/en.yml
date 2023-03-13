@@ -1,6 +1,5 @@
 titles:
   home: Home
-  about: About
   blog: Blog
   projects: Projects
 
@@ -11,7 +10,6 @@ site:
   slogan: A phrase as slogan.
 
 urls:
-  about: /about.html
   blog: /blog.html
   projects: /projects.html
 
@@ -28,5 +26,4 @@ labels:
   share_in_twitter: Share in Twitter
   share_in_facebook: Share in Facebook
   share_via_email: Share via Email
-  share_email_body: Check out this article I found on the Estupinan Art blog
-  galleries: Visit our galleries
+  share_email_body: Check out this article I found
