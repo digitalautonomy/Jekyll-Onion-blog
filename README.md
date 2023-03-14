@@ -1,26 +1,39 @@
 # Desplegando un blog anónimo en servicios Onion
 
-En este repositorio recopilamos la información necesaria para crear un blog anónimo en una placa Raspberry Pi o un computador viejo.
-El resultado será un blog publicado en la red Tor que podrá ser accedido por cualquier persona usando el navegador [Tor](https://www.torproject.org/download/).
+En este repositorio recopilamos la información necesaria para crear un blog anónimo en una computadora vieja.
+
+El resultado será un blog publicado en la red Tor que podrá ser accedido por cualquier persona usando el [navegador Tor](https://www.torproject.org/download/).
 
 ## Materiales
 
-1. Computadora vieja
-
-2. Computadora
-
-    Para ayudar en la configuración del servidor en la Raspberry Pi.
-
-5. USB
-
-6. Cables
-
-    1. Cable de red
+### Computadora vieja
 
 
-## Instalar Debian 11 en la computadora vieja
 
-### Habilitando SSH en Raspberry Pi
+### Computadora personal
+
+
+
+### Memoria USB
+
+
+
+### Cable de red
+
+
+
+## Instalando Debian 11 en la computadora vieja
+
+### Obteniendo la versión adecuada de Debian
+
+
+### Copiando Debian a la memoria USB
+
+
+
+### Instalando Debian
+
+
 
 ## Creando un blog con ayuda de Tor y Jekyll
 
