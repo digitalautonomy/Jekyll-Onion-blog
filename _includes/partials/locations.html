@@ -1,15 +1,11 @@
 {% for location in site.data.locations %}
-<div class="py-2">
+<div class="py-2 flex flex-col items-center justify-between md:flex-row">
     <div class="location-item">
-        <img src="/assets/images/icons/mail.svg" alt="" class="w-[18px]" />
-        <p>
-            {{ location.email }}
-        </p>
+        {% svg "/assets/images/icons/{{ location.icon }}" %}
     </div>
-    <div class="location-item">
-        <img src="/assets/images/icons/icon-gnupg.svg" alt="" class="w-[18px]" />
+    <div>
         <p>
-            {{ location.gpg }}
+            {{ location.name }}
         </p>
     </div>
 </div>
