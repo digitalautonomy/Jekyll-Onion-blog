@@ -3,6 +3,7 @@ title_split: Some|beautiful|little|title
 brand: BRAND
 #host: https://thesite.something
 email: contact@thesite.something
+logo: logo.svg
 encoding: utf-8
 future: true
 dev_host: http://localhost:4000
