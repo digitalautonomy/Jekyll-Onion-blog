@@ -1,7 +1,7 @@
-- location: Some title
+- location: Email address
   name: Someone email address
   icon: mail.svg
 
-- location: Some title
+- location: GPG fingerprint
   name: Here your email fingerprint
   icon: icon-gnupg.svg

@@ -1,15 +1,20 @@
 ---
 layout: post
 title: A beautiful title
-picture: /assets/images/posts/images.idiom.png
+picture: /assets/images/posts/description-image.idiom.png
 toc: false
 ---
 
-Put here the content of your post. Remember to use markdown sintaxis, you can review about markdown sintaxis [here](https://www.markdownguide.org/basic-syntax). 
-Remember to make and spanish and english copy of your post, these two files mush have the same file name but each one mush be
-saved in their respective directory, some like, for the spanish version use the directory /_i18n/es/_post and for the english
-version use the directory /_i18n/en/_post.
+Change the title tag (UP) with the title or your post.
 
-All the images that you use in your post mush be stored in the /assets/images/post/ directory.
+Change the picture tag (UP) with the picture of your post that must be stored in `/assets/images/post`. If your images have 
+Spanish and English version, use an identifier in the name of the image file, like `this-is-my-image.en.png` and
+`this-is-my-image.es.png`.
 
-Review the README files to find more information and instructions.
+If your do not set a picture for your post, this will take a predefine picture (`generic-pic-post.jpg`).
+
+Put here the content of your post. Remember to use markdown sintaxis, you can review about markdown sintaxis
+[here](https://www.markdownguide.org/basic-syntax).
+
+To put images into your post use the follow sintaxis `![alternative title](/assets/images/post/your-image.png)`. All the
+images that you use in your post mush be stored in the `/assets/images/post/` directory.

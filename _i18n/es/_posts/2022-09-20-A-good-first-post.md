@@ -1,13 +1,16 @@
 ---
 layout: post
-title: Este es un asombroso primer post
+title: Post acerca de gatitos
+picture: /assets/images/post/descriptive_image_post_kitten.es.jpg
+toc: false
 ---
 
-## Acerca del álgebra abstracta
+## Gaticos
 
-En álgebra abstracta, la teoría de anillos es el estudio de anillos —estructuras algebraicas en las cuales la adición y 
-la multiplicación están definidas y tienen propiedades similares a aquellas operaciones definidas para los enteros—. La 
-teoría de anillos estudia la estructura de anillos, sus representaciones, o, en lenguaje diferente, módulos, clases 
-especiales de anillos (anillos de grupo, anillos de división, álgebras universales envolventes), así como una variedad 
-de propiedades que resultaron de interés tanto dentro de la propia teoría y para sus aplicaciones, como propiedades 
-homológicas e identidades polinómicas. 
+Un gatito es un gato juvenil. Tras nacer, los gatitos muestran altruismo primario y dependen totalmente de sus madres para 
+sobrevivir. Normalmente no abren los ojos hasta pasados entre siete y diez días. A las dos semanas, los gatitos se desarrollan 
+rápidamente y empiezan a explorar el mundo fuera del nido. Al cabo de otras tres o cuatro semanas, empiezan a comer alimentos 
+sólidos y les salen los dientes de leche. Los gatitos domésticos son animales muy sociables y suelen disfrutar de la compañía 
+humana.
+
+![Kitten](/assets/images/post/image_post_kitten.webp)

@@ -1,11 +1,14 @@
 ---
 layout: post
-title: This is an awesome first post
+title: Post about kittens
+picture: /assets/images/post/descriptive_image_post_kitten.en.jpg
+toc: false
 ---
-## About ring theory
+## Kittens
+A kitten is a juvenile cat. After being born, kittens display primary altriciality and are totally 
+dependent on their mothers for survival. They normally do not open their eyes for seven to ten days. 
+After about two weeks, kittens develop quickly and begin to explore the world outside their nest. 
+After a further three to four weeks, they begin to eat solid food and grow baby teeth. 
+Domestic kittens are highly social animals and usually enjoy human companionship. 
 
-In algebra, ring theory is the study of rings—algebraic structures in which addition and multiplication are defined 
-and have similar properties to those operations defined for the integers. Ring theory studies the structure of rings, 
-their representations, or, in different language, modules, special classes of rings (group rings, division rings, 
-universal enveloping algebras), as well as an array of properties that proved to be of interest both within the theory 
-itself and for its applications, such as homological properties and polynomial identities.
+![Kitten](/assets/images/post/image_post_kitten.webp)
