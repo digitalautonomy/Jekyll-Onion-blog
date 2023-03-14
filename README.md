@@ -4,7 +4,7 @@ En este repositorio recopilamos la información necesaria para crear un blog an�
 
 El resultado será un blog publicado en la red Tor que podrá ser accedido por cualquier persona usando el [navegador Tor](https://www.torproject.org/download/).
 
-## Materiales 
+## Materiales  
 
 ### Computadora vieja
 
