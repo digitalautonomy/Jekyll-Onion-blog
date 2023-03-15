@@ -1,5 +1,5 @@
-- location: Email address
-  name: Someone email address
+- location: pepita@gmail.com
+  name: pepita
   icon: mail.svg
 
 - location: GPG fingerprint

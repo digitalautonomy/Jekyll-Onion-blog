@@ -59,15 +59,23 @@ If you do not have a fingerprint delete de section `- location: GPG fingerprint`
 
 # 4. Add posts to your blog
 
-You can use the template (`post_template.md`) in `/DEV` directory to do new posts.
+When you have wroten a new post (in english or spanish) and has the images to upload, 
+you can use the template (`post_template.md`) in `/DEV` directory to do new posts.
 
-Remember to do spanish and english copies of your post, these two files mush have the same file name but each one must be
-stored in their respective directory. For the spanish version use the directory is `/_i18n/es/_post` and for the english
+
+If you want to do spanish and english versions of your post, the two files **must have the same file name** but each one must bestored in their respective directory. 
+
+
+For the spanish version use the directory is `/_i18n/es/_post` and for the english
 version use the directory `/_i18n/en/_post`.
 
-#### Remark
+### How to name correctly yours post files
+
+
 The name of your post fine **MUST** use this sintaxis `yyyy-mm-dd-title-of-your-post.md`. You can't replace `-` with any
-other symbol, and in the title of your post, replace spaces with `-` i.e. _title of your post_ should be `title-of-your-post`.
+other symbol, and in the title of your post, replace spaces with `-`.
+
+ For example:  _title of your post_ should be `title-of-your-post`.
 
 Remember the name of the post file is not the same as the title of the post.
 
@@ -80,7 +88,8 @@ We located the next files for the post in English and Spanish located in the dir
 And we save the images as follows
 ##### Images folder
 ![Images folder](./images/example_images.png)
-You will se this as follows
+
+You will see this as follows.
 
 ##### Featured
 ![Featured](./images/example_featured.png)
