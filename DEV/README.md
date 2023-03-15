@@ -61,9 +61,11 @@ If you want to do spanish and english versions of your post, the two files **mus
 
 For the spanish version use the directory is `/_i18n/es/_post` and for the english version use the directory `/_i18n/en/_post`.
 
-### How to name correctly yours post files
+## How to name correctly yours post files
 
-The name of your post fine **MUST** use this syntax `yyyy-mm-dd-title-of-your-post.md`. You can't replace `-` with any other symbol, and in the title of your post, replace spaces with `-`.
+
+The name of your post fine **MUST** use this sintaxis **`yyyy-mm-dd-title-of-your-post.md`**. You can't replace `-` with any
+other symbol, and in the title of your post, replace spaces with `-`.
 
 For example:  _title of your post_ should be `title-of-your-post`.
 
