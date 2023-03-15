@@ -1,15 +1,15 @@
 titles:
   home: Home
-  blog: Blog
+  blog: Bloger
 
 site:
-  description: Some enjoyable description.
-  slogan: A phrase as slogan.
+  description: We are an ong
+  slogan: privacy a default
 
 urls:
-  blog: /blog.html
+  blog: ong
 
 labels:
   featured: Featured
   share_via_email: Share via Email
-  share_email_body: Check out this article I found
+  share_email_body: look my article here

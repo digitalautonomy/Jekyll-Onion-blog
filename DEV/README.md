@@ -10,7 +10,12 @@ For simplicity, we suggest **ONLY** make changes on the folders and files we spe
 ## 1. Change logo
 
 To change the image logo you need to have an `.svg` file named `logo.svg` and stored in `/assets/images/`. Preferable this
-image must be a square image. This change will modify the image that show here.
+image must be a square image, if not it is going to  be deformed. 
+
+This change will modify the image that show here.
+
+*Warning:*
+    please verify your logo is format SVG
 
 ![Change logo](./images/change-logo.png)
 
@@ -26,7 +31,13 @@ In order of change the hero section into the landing page, you have three elemen
 Remember do these two changes in both files to allow that the page to show the text in both languages.
 
 3. **Background:** To change the background in the hero section, first you need have an image named `background-desktop.png`
-    and replace with this the image with the same name into the directory `assets/images`.
+    and replace with this the image with the same name into the directory `assets/images`
+    .
+
+    *Warning:*
+    please verify your logo is format PNG, if it is JPG you can rename it as .png
+
+
 
 ![Change logo](./images/change-hero.png)
 
