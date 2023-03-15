@@ -19,6 +19,7 @@ El resultado será un blog publicado en la red Tor que podrá ser accedido por c
 
 Jekyll es un generador de sitios estáticos que utiliza Markdown para describir el contenido que se desea mostrar. Usaremos Jekyll para desplegar un blog localmente y usaremos Tor para publicarlo como un Onion Service.
 
+
 ### Conectando las dos computadoras con SSH
 Conecta el servidor por WiFi o por cable ethernet a la misma red que el cliente.
 #### En el servidor
@@ -56,7 +57,16 @@ La terminal te pedirá confirmación para realizar la descarga, después pedirá
 
 ### Nuestra plantilla para el blog
 
+
 ### Desplegando el blog
+
+para iniciar la instalacion automatica de los requerimientos copia y pega esto en la terminal:
+
+        cd /Jekyll-Onion-blog/DEV/
+        chmod +x installation.sh | ./installation.sh
+
+Para finalizar la instalacion reinicia tu equipo.
+
 
 
 ### Publicando el blog en la red Tor
