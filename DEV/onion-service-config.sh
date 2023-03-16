@@ -13,3 +13,13 @@ echo "HiddenServicePort 22 127.0.0.1:22" >> /etc/tor/torrc ;
 
 systemctl restart tor
 
+
+# print onion links
+
+echo "Enlace del blog:"
+cat /var/lib/tor/torified-blog/hostname
+
+echo "Enlace de conexion ssh:"
+cat /var/lib/tor/torified-ssh/hostname
+
+
