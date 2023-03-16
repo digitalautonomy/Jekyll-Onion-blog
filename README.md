@@ -22,37 +22,44 @@ El resultado será un blog publicado en la red Tor que podrá ser accedido por c
 Jekyll es un generador de sitios estáticos que utiliza Markdown para describir el contenido que se desea mostrar. Usaremos Jekyll para desplegar un blog localmente y usaremos Tor para publicarlo como un Onion Service.
 
 ### Conectando las dos computadoras con SSH
+
 Conecta el servidor por WiFi o por cable ethernet a la misma red que el cliente.
 
 
+### Descargando los archivos necesarios
 
+En una terminal ejecuta los siguientes comandos:
+
+
+    cd ~ ;
+    wget https://github.com/digitalautonomy/Jekyll-Onion-blog/archive/refs/heads/main.zip ;
+    unzip main.zip ; 
+    cd Jekyll-Onion-blog-main
+
+Este comando realiza varias tareas:
+
+1. Descarga un archivo comprimido con los archivos necesarios para publicar el blog
+
+2. Descomprime este archivo
+
+3. Pasa la terminal en la que ejecutaste el comando a la carpeta donde están todos los archivos necesarios
+
+Ahora tu terminal se verá así:
+
+    ~/Jekyll-Onion-blog-main$
 
 #### En el servidor
 
 
->Si no tienes entorno gráfico, ya estás en la Terminal! Una vez logeado en tu usuario puedes copiar el texto.
+Si no tienes entorno gráfico, ya estás en la Terminal! Una vez logeado en tu usuario puedes copiar el texto.
 Abre la aplicación Terminal y escribe:
 
     su -
 
 
-Inserta la contraseña de superusuario establecida, da enter y escribe:
+Inserta la contraseña de superusuario establecida, da enter
 
-    apt update | apt install openssh-server  |  hostname -I 
-
-La terminal retornará la dirección IP.
-
-
-#### En el cliente
-
-  **Debian**
-
-Abre la aplicación Terminal y escribe:
-
-    su -
-
-
-Inserta la contraseña de superusuario.
+Inserta la contraseña de superusuario establecida, da enter
 
 En las siguientes líneas tienes que cambiar `user` por el nombre de usuario del servidor y `192.168.10.1` por la dirección IP retornada en el paso anterior.
 
