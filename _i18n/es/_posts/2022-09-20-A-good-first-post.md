@@ -11,6 +11,6 @@ Un gatito es un gato juvenil. Tras nacer, los gatitos muestran altruismo primari
 sobrevivir. Normalmente no abren los ojos hasta pasados entre siete y diez días. A las dos semanas, los gatitos se desarrollan 
 rápidamente y empiezan a explorar el mundo fuera del nido. Al cabo de otras tres o cuatro semanas, empiezan a comer alimentos 
 sólidos y les salen los dientes de leche. Los gatitos domésticos son animales muy sociables y suelen disfrutar de la compañía 
-humana.
+humana.xs
 
 ![Kitten](/assets/images/post/image_post_kitten.webp)
