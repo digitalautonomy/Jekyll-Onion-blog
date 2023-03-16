@@ -4,6 +4,12 @@ apt update
 #tor installation command 
 apt install tor
 
+#openssh installation commad 
+apt install openssh-server
+
+#rsync installation command 
+apt install rsync 
+
 #docker intallation command
 
 apt-get install \
