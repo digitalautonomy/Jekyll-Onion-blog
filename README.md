@@ -25,11 +25,20 @@ Jekyll es un generador de sitios estáticos que utiliza Markdown para describir 
 
 Conecta el servidor por WiFi o por cable ethernet a la misma red que el cliente.
 
+### En el servidor
+#### Descargando los archivos necesarios
 
-### Descargando los archivos necesarios
+En una terminal ejecuta los siguientes comandos en el mismo orden:
 
-En una terminal ejecuta los siguientes comandos:
+    su -
 
+El comando anterior te pedirá la contraseña root
+
+    apt update;
+    apt install unzip;
+    exit;
+
+Finalmente,
 
     cd ~ ;
     wget https://github.com/digitalautonomy/Jekyll-Onion-blog/archive/refs/heads/main.zip ;
@@ -48,18 +57,35 @@ Ahora tu terminal se verá así:
 
     ~/Jekyll-Onion-blog-main$
 
-#### En el servidor
-
 
 Si no tienes entorno gráfico, ya estás en la Terminal! Una vez logeado en tu usuario puedes copiar el texto.
 Abre la aplicación Terminal y escribe:
 
     su -
 
+<!---
+Inserta la contraseña de superusuario establecida, da enter.
 
+Ejecuta el siguiente comando
+
+    cd /home/nombre_de_tu_usuario/Jekyll-Onion-blog-main/DEV ;
+    chmod -744 installation.sh ;
+    ./installation.sh
+
+
+Luego
+
+    usermod -aG docker nombre_de_tu_usuario ;
+
+reiniciar 
+
+luego 
+
+    cd /home/nombre_de_tu_usuario/Jekyll-Onion-blog-main/DEV;
+    ./docker.sh
+-->
 Inserta la contraseña de superusuario establecida, da enter
 
-Inserta la contraseña de superusuario establecida, da enter
 
 En las siguientes líneas tienes que cambiar `user` por el nombre de usuario del servidor y `192.168.10.1` por la dirección IP retornada en el paso anterior.
 
