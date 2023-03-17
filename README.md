@@ -21,31 +21,22 @@ Esto configurará el servidor Jekyll para poder publicar nuestro blog.
 
 En una terminal ejecute en el mismo orden los siguientes comandos:
 
-    su -
+    $ su -c "apt update && apt install unzip"
 
 La terminal le pedirá la contraseña del usuario root, introdúzcala.
 
-    apt update;
-    apt install unzip;
-    exit;
-
 Luego, descargue y descomprima este repositorio, así:
 
-    cd ~ ;
-    wget https://github.com/digitalautonomy/Jekyll-Onion-blog/archive/refs/heads/main.zip ;
-    unzip main.zip ; 
+    $ cd ~ 
+    $ wget https://github.com/digitalautonomy/Jekyll-Onion-blog/archive/refs/heads/main.zip
+    $ unzip main.zip
     
 #### Entrando en la carpeta con los códigos
 
-Después, entre en la carpeta del archivo descomprimido.
+Después, entre en la carpeta del archivo descomprimido y de permisos de ejecución a la carpeta DEV y entre en ella:
 
-    cd Jekyll-Onion-blog-main
-
-
-De permisos de ejecución a la carpeta DEV y entre en ella:
-
-    chmod -R +x DEV/
-    cd DEV/
+    $ cd Jekyll-Onion-blog-main/DEV
+    $ chmod +x *.sh
 
 Si siguió los pasos correctamente, la terminal estará ubicada en:
 
@@ -55,53 +46,38 @@ Si siguió los pasos correctamente, la terminal estará ubicada en:
 
 > En adelante, reemplace `{tu-usuario}` con su nombre de usuario.
 
-Acceda al usuario root:
-
-    su -
-
 La terminal le pedirá la contraseña del usuario root, introdúzcala.
 
-    cd /home/{tu-usuario}/Jekyll-Onion-blog-main/DEV/
-    ./installation.sh
-
-Una vez terminado, desloguéese de su usuario root:
-
-    exit
-
+    $ su - -c "cd /home/$USER/Jekyll-Onion-blog-main/DEV/; ./installation.sh"
 
 Ahora, 
 
-    ./docker.sh
+    $ ./docker.sh
 
 Verás algunas confirmaciones en tu pantalla indicando que ha sido exitosa la instalación.
 
+(TODO: these need to be done as root, no?)
 
-        groupadd docker 
-        usermod -aG docker {tu-usuario}
+     $ groupadd docker 
+     $ usermod -aG docker {tu-usuario}
 
 Reinicia tu equipo , puedes hacerlo manualmente o con el comando 
 
-    -init 6
+(TODO: root, right?)
+
+    $ init 6
 
 en la terminal.
 
 De nuevo en la terminal.
 
-        cd Jekyll-Onion-blog-main/DEV
-        ./docker.sh
+    $ cd Jekyll-Onion-blog-main/DEV
+    $ ./docker.sh
 
 Luego,
 
-    su -
-    cd /home/{tu-usuario}/Jekyll-Onion-blog-main/DEV
-
-y,
-
-    ./onion-service-config.sh   
-
-Por ultimo,
-
-    ./onion-get-links-and-keys.sh
+    $ su - -c "/home/$USER/Jekyll-Onion-blog-main/DEV/onion-service-config.sh"
+    $ su - -c "/home/$USER/Jekyll-Onion-blog-main/DEV/onion-get-links-and-keys.sh"
 
 Este comando le arrojará información importante, por favor guardela.
 
@@ -168,9 +144,7 @@ Tenga en cuenta que esta infraestructura de blog solo admite texto e imágenes.
 
 ## Publicando sus nuevos post
 
-
 ### Conectese a su cliente
-
 
 Conecta el servidor por WiFi o por cable ethernet a la misma red que el cliente.
 
@@ -179,7 +153,7 @@ Inserta la contraseña de superusuario establecida, da enter
 
 En las siguientes líneas tienes que cambiar `user` por el nombre de usuario del servidor y `192.168.10.1` por la dirección IP retornada en el paso anterior.
 
-    apt install openssh-client | ssh user@192.168.10.10
+    $ ssh user@192.168.10.10 "apt install openssh-client"
 
 La terminal te pedirá confirmación para realizar la descarga, después pedirá la contraseña del usuario `user` del Debian.
 
