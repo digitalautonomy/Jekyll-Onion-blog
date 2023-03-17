@@ -112,6 +112,47 @@ Por ultimo,
 
 Este comando le arrojará información importante, por favor guardela.
 
+    +---------------------------------------------------------+
+    + Recuerde que este es el enlace que sus lectores         +
+    + deben usar para acceder a su nuevo blog utilizando      +
+    + Tor Browser.                                            +
+    +---------------------------------------------------------+
+    {link-onion-blog.onion}
+
+    cat <<'END'
+    +---------------------------------------------------------+
+    + Recuerde que este es el enlace que únicamente usted     +
+    + debe utilizar para administrar los contenidos de su     +
+    + blog mediante una conexión SSH segura.                  +
+    +---------------------------------------------------------+
+    {link-onion-ssh.onion}
+
+## Conectando al servidor mediante Tor y SSH
+
+Tor y SSH le permitiran manejar su servidor de manera segura y anonima.
+Para poder conectarse debe primero instalar SSH y Tor en el cliente.
+
+Para esto,
+
+    su-
+
+Y,
+
+    apt install openssh-client ;
+    apt install tor
+
+
+Luego para conectarse debe tener en cuenta el link de conexion SSH que obtuvo del paso anterior, recuerde mantener este link en secreto.
+
+    torify ssh {su-usuario}@{link-onion-ssh.onion} 
+
+### NOTA
+Si el servidor esta en su red local puede hacer una coneccion SSH la Ip del servidor. Para esto recuerde que la IP local puede cambiar asi que tendra que conectarse fisicamente el servidor y obtener la IP. Por esto y por seguridad le recomendamos usar el comando anterior.
+
+Este comando le pedira confirmar y la clave del usuario de su servidor, una vez verificado podra hacer uso normal de el servidor por este medio.
+
+
+
 ## Publicando el contenido 
 
 ### Personalice el blog.
