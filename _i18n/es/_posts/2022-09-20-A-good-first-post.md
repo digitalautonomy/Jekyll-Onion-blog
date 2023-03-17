@@ -1,16 +1,16 @@
 ---
 layout: post
-title: Post acerca de gatitos
-picture: /assets/images/post/descriptive_image_post_kitten.es.jpg
+title: PrivaciQ
+picture: /assets/images/post/privaciQ.png
 toc: false
 ---
 
-## Gaticos
+## Derechos en la red: aprende, defiende, difunde
 
-Un gatito es un gato juvenil. Tras nacer, los gatitos muestran altruismo primario y dependen totalmente de sus madres para 
-sobrevivir. Normalmente no abren los ojos hasta pasados entre siete y diez días. A las dos semanas, los gatitos se desarrollan 
-rápidamente y empiezan a explorar el mundo fuera del nido. Al cabo de otras tres o cuatro semanas, empiezan a comer alimentos 
-sólidos y les salen los dientes de leche. Los gatitos domésticos son animales muy sociables y suelen disfrutar de la compañía 
-humana.xs
+PrivaciQ es una jornada con actividades abiertas y de divulgación sobre la importancia de la privacidad en el mundo digital, cuyo objetivo es aprender, defender y difundir los derechos humanos y digitales.
 
-![Kitten](/assets/images/post/image_post_kitten.webp)
+Tendremos talleres iniciales para ayudarte a proteger tus datos, como también para navegar de una manera segura y anónima haciendo uso de herramientas de software libre. Habrán charlas con expertos en seguridad, sí como paneles que abordarán preocupaciones sobre la defensa de los derechos en la red.
+
+Te invitamos a participar para hablar sobre seguridad digital, conocer otras personas preocupadas por la vigilancia y además, acercarte y conocer más sobre el proyecto TOR.
+
+El encuentro será este sábado 18 de marzo, en la Facultad de Ciencias Sociales y Humanas de la Universidad Central del Ecuador (UCE) desde las 9:30 de la mañana, ingreso por la calle Gaspar de Carvajal.

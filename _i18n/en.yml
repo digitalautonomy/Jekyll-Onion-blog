@@ -1,13 +1,13 @@
 titles:
   home: Home
-  blog: Bloger
+  blog: Blog
 
 site:
-  description: We are an ong
-  slogan: privacy a default
+  description: A lovely description
+  slogan: Some phrase as a slogan
 
 urls:
-  blog: ong
+  blog: /blog.html
 
 labels:
   featured: Featured
