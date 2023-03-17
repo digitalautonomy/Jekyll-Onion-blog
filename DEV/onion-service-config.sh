@@ -50,8 +50,8 @@ cp /var/lib/tor/torified-blog/hs_ed25519_public_key /root/ssh-keys
 cat <<'END'
 +---------------------------------------------------------+
 + Las claves públicas y privadas para el blog fueron      +
-+                                                         +
 + copiadas en root/blog-keys                              +
++                                                         +
 + Las claves públicas y privadas para la conexión SSH     +
 + fueron copiadas en root/ssh-keys                        +
 +                                                         +
