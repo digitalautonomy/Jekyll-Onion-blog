@@ -72,13 +72,25 @@ Ahora, tendrás que acceder a tu usuario root y **cambiar {tu-usuario} con tu no
     cd /home/{tu-usuario}/Jekyll-Onion-blog-main/DEV/
     ./installation.sh
 
+Una vez terminado, 
+    exit
+y volveras al usuario normal.
+
+Ahora, 
+
+    ./docker.sh
+
 Verás algunas confirmaciones en tu pantalla indicando que ha sido exitosa la instalación.
 
 
         groupadd docker 
         usermod -aG docker {tu-usuario}
 
-Reinicia tu equipo , puedes hacerlo manualmente o con el comando -init 6 en la terminal
+Reinicia tu equipo , puedes hacerlo manualmente o con el comando 
+
+    -init 6
+
+en la terminal.
 
 De nuevo en la terminal.
 
@@ -88,8 +100,15 @@ De nuevo en la terminal.
 Luego,
 
     su -
-    cd /home/{tu-usuario}/Jekyll-Onion-blog-main/DEV/
+    cd /home/{tu-usuario}/Jekyll-Onion-blog-main/DEV
+
+y,
+
     ./onion-service-config.sh   
+
+Por ultimo,
+
+    ./onion-get-links-and-keys.sh
 
 Este comando le arrojará información importante, por favor guardela.
 
