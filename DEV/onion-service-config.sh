@@ -44,25 +44,19 @@ cat /var/lib/tor/torified-ssh/hostname
 
 cp /var/lib/tor/torified-blog/hs_ed25519_secret_key /root/blog-keys
 cp /var/lib/tor/torified-blog/hs_ed25519_public_key /root/blog-keys
+cp /var/lib/tor/torified-blog/hs_ed25519_secret_key /root/ssh-keys
+cp /var/lib/tor/torified-blog/hs_ed25519_public_key /root/ssh-keys
+
 cat <<'END'
 +---------------------------------------------------------+
 + Las claves públicas y privadas para el blog fueron      +
++                                                         +
 + copiadas en root/blog-keys                              +
-+---------------------------------------------------------+
-END
-
-cp /var/lib/tor/torified-blog/hs_ed25519_secret_key /root/blog-keys
-cp /var/lib/tor/torified-blog/hs_ed25519_public_key /root/blog-keys
-cat <<'END'
-+---------------------------------------------------------+
 + Las claves públicas y privadas para la conexión SSH     +
 + fueron copiadas en root/ssh-keys                        +
-+---------------------------------------------------------+
-END
-cat <<'END'
-+---------------------------------------------------------+
++                                                         +
 + RECOMENDACIÓN: Copie estas dos carpetas a una           +
-+ computadora segura y borrelas de esta                   +
++ computadora segura y borrelas de esta computadora       +
 + Para más información, consulte la documentación         +
 +---------------------------------------------------------+
 END
