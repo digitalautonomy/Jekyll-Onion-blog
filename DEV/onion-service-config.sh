@@ -2,7 +2,9 @@
 
 set -e
 
-# This script will be configure the Tor onion services
+# This script should be run as root
+
+# This script will configure the Tor onion services
 
 # Set Onion service for the Jekyll Blog
 echo "HiddenServiceDir /var/lib/tor/torified-blog/" >> /etc/tor/torrc ;

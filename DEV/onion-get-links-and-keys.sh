@@ -1,4 +1,4 @@
-# Here your Onion Services links
+# Here are your Onion Services links
 
 cat <<'END'
 +---------------------------------------------------------+
@@ -18,10 +18,13 @@ cat <<'END'
 END
 cat /var/lib/tor/torified-ssh/hostname
 
+mkdir -p /root/blog-keys
+mkdir -p /root/ssh-keys
+
 cp /var/lib/tor/torified-blog/hs_ed25519_secret_key /root/blog-keys
 cp /var/lib/tor/torified-blog/hs_ed25519_public_key /root/blog-keys
-cp /var/lib/tor/torified-blog/hs_ed25519_secret_key /root/ssh-keys
-cp /var/lib/tor/torified-blog/hs_ed25519_public_key /root/ssh-keys
+cp /var/lib/tor/torified-ssh/hs_ed25519_secret_key /root/ssh-keys
+cp /var/lib/tor/torified-ssh/hs_ed25519_public_key /root/ssh-keys
 
 cat <<'END'
 +---------------------------------------------------------+
