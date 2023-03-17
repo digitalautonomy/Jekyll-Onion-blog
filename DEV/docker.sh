@@ -13,7 +13,7 @@ END
 
 # This command automate the execution of the docker container in a way that the Tor service can show your blog to Internet
 # and you will can update contents automatically
-docker run -d --restart always -p 35729:35729 -p 4000:4000 --mount type=bind,src="$(pwd)",target=/home/jekyll/app jekyll-template:latest
+docker run -d --restart always -p 35729:35729 -p 4000:4000 --mount type=bind,src="$(pwd)/../",target=/home/jekyll/app jekyll-template:latest
 cat <<'END'
 +---------------------------------------------------------+
 + ¡Su nuevo Blog ha sido desplegado con éxito!            +
