@@ -1,80 +1,73 @@
-# Desplegando un blog anónimo en servicios Onion
+# Desplegando un blog anónimo en Onion Services
 
-En este repositorio recopilamos la información necesaria para crear un blog anónimo en una computadora vieja.
-
-
-El resultado será un blog publicado en la red Tor que podrá ser accedido por cualquier persona usando el [navegador Tor](https://www.torproject.org/download/) y podrá ser actualizado desde cualquier computadora con conexion a internet.
-
-> Este tutorial fue probado en maquinas con Debian Testing.
-
-## Materiales  
-
-1. Computadora vieja  (de aqui en adelante `cliente`)
-
-2. Computadora personal
-
-4. Cable de red
+En este repositorio recopilamos la información necesaria para crear un blog anónimo en una computadora.
 
 
->Su `cliente` debe tener instalado Debian, si no sabe como hacerlo puede consultar en [pagina oficial Debian](https://www.debian.org/releases/stable/installmanual).
+El resultado será un blog publicado en la red Tor que podrá ser accedido por cualquier persona usando el navegador [Tor](https://www.torproject.org/download/) y podrá ser actualizado desde cualquier computadora con conexión a internet.
 
+> Este tutorial fue probado en máquinas con Debian Testing.
 
-## Preparando la infraestructura
+## Requisitos de la computadora
+
+1. Tener sistema operativo [Debian](https://www.debian.org/releases/stable/installmanual).
+
+> Una alternativa fácil y segura a instalar Debian es usar [Tails](https://tails.boum.org/).
+
+## Configurando el servidor en la computadora
 
 Esto configurará el servidor Jekyll para poder publicar nuestro blog.
 
-### En el servidor
 #### Descargando los archivos necesarios
 
-En una terminal ejecuta los siguientes comandos en el mismo orden:
+En una terminal ejecute en el mismo orden los siguientes comandos:
 
     su -
 
-El comando anterior te pedirá la contraseña root
+La terminal le pedirá la contraseña del usuario root, introdúzcala.
 
     apt update;
     apt install unzip;
     exit;
 
-Luego,
+Luego, descargue y descomprima este repositorio, así:
 
     cd ~ ;
     wget https://github.com/digitalautonomy/Jekyll-Onion-blog/archive/refs/heads/main.zip ;
     unzip main.zip ; 
     
+#### Entrando en la carpeta con los códigos
 
-Este comando:
+Después, entre en la carpeta del archivo descomprimido.
 
-1. Descarga un archivo comprimido con los archivos necesarios para publicar el blog
+    cd Jekyll-Onion-blog-main
 
-2. Descomprime este archivo
 
-Luego,
+De permisos de ejecución a la carpeta DEV y entre en ella:
 
-        cd Jekyll-Onion-blog-main
-        chmod -R +x DEV/
-        cd DEV/
+    chmod -R +x DEV/
+    cd DEV/
 
-Estos comando:
-
-1. Cambia a la carpeta  
-
-2. Da permisos de ejecucion para hacer las próximas instalaciones
-
-Tu terminal se verá así:
+Si siguió los pasos correctamente, la terminal estará ubicada en:
 
     ~/Jekyll-Onion-blog-main/DEV/$
-    
 
-Ahora, tendrás que acceder a tu usuario root y **cambiar {tu-usuario} con tu nombre de usuario**
+#### Añada permisos a su usuario
+
+> En adelante, reemplace `{tu-usuario}` con su nombre de usuario.
+
+Acceda al usuario root:
 
     su -
+
+La terminal le pedirá la contraseña del usuario root, introdúzcala.
+
     cd /home/{tu-usuario}/Jekyll-Onion-blog-main/DEV/
     ./installation.sh
 
-Una vez terminado, 
+Una vez terminado, desloguéese de su usuario root:
+
     exit
-y volveras al usuario normal.
+
 
 Ahora, 
 
