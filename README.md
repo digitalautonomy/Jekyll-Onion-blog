@@ -93,20 +93,31 @@ Luego,
 
 Este comando le arrojará información importante, por favor guardela.
 
+## Publicando el contenido 
 
-### Nuestra plantilla para el blog
+### Personalice el blog.
 
+Puedes ver las [Intrucciones de personalización](https://github.com/digitalautonomy/Jekyll-Onion-blog/tree/main/DEV) en el enlace.
 
 ### Publicando el blog en la red Tor
 
+La salida del último script le ha dado las claves para compartir **por medios seguros** con sus lectores.
+Será un link.onion al que ellos usando Tor Browser se pueden conectar para consultar el blog.
 
-## Manteniendo y publicando el blog
 
-### Creando un blog con ayuda de Tor y Jekyll
+## Creando nuevos post 
 
-Jekyll es un generador de sitios estáticos que utiliza Markdown para describir el contenido que se desea mostrar. Usaremos Jekyll para desplegar un blog localmente y usaremos Tor para publicarlo como un Onion Service.
+Jekyll es un generador de sitios estáticos que utiliza Markdown para describir el contenido que se desea mostrar. Puede usar editores de Markdown como [Ghost writer](https://ghostwriter.kde.org/) o  [Mark text](https://github.com/marktext/marktext) para crear facilmente sus post.
 
-### Conectando las dos computadoras con SSH
+> Al crear su contenido cuide su anonimato.
+
+Tenga en cuenta que esta infraestructura de blog solo admite texto e imágenes.
+
+## Publicando sus nuevos post
+
+
+### Conectese a su cliente
+
 
 Conecta el servidor por WiFi o por cable ethernet a la misma red que el cliente.
 
@@ -118,4 +129,15 @@ En las siguientes líneas tienes que cambiar `user` por el nombre de usuario del
     apt install openssh-client | ssh user@192.168.10.10
 
 La terminal te pedirá confirmación para realizar la descarga, después pedirá la contraseña del usuario `user` del Debian.
+
+### Enviando archivos con Rsync
+
+## Acerca de los desarrolladores
+
+Este proyecto fue desarrollado por la ONG Centro de Autonomía Digital, establecida en Quito, Ecuador.
+
+## Nota final
+
+Este proyecto está pensado para activistas de todo le sur global, para protejer su privacidad, esperamos sea de ayuda.
+
 
