@@ -18,7 +18,7 @@ systemctl restart tor
 
 cat <<'END'
 +---------------------------------------------------------+
-+ Onion Services has been successfully configured         +
++ Onion Services ha sido configurado satisfactoriamente.  +
 +---------------------------------------------------------+
 END
 

@@ -6,7 +6,7 @@ set -e
 docker build -t jekyll-template:latest ../
 cat <<'END'
 +---------------------------------------------------------+
-+ ¡La imagen Docker con su nuevo Blog se ha creado        +
++ ¡La imagen Docker con su nuevo blog se ha creado        +
 + con éxito!                                              +
 +---------------------------------------------------------+
 END
@@ -16,6 +16,6 @@ END
 docker run -d --restart always -p 35729:35729 -p 4000:4000 --mount type=bind,src="$(pwd)/../",target=/home/jekyll/app jekyll-template:latest
 cat <<'END'
 +---------------------------------------------------------+
-+ ¡Su nuevo Blog ha sido desplegado con éxito!            +
++ ¡Su nuevo blog ha sido desplegado con éxito!            +
 +---------------------------------------------------------+
 END

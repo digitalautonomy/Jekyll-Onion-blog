@@ -8,8 +8,8 @@ apt-get update -qq > /dev/null
 
 cat <<'END'
 +---------------------------------------------+
-+ The installation has been started           +
-+ this will take a few minutes                +
++ La instalación se ha iniciado.              +
++ Este proceso tomará algunos minutos.        +
 +---------------------------------------------+
 END
 
@@ -27,7 +27,7 @@ apt-get update -qq > /dev/null
 apt-get install tor deb.torproject.org-keyring -qq > /dev/null
 cat <<'END'
 +---------------------------------------------+
-+ Tor has been successfully installed         +
++ Tor se ha instalado satisfactoriamente.     +
 +---------------------------------------------+
 END
 
@@ -35,7 +35,7 @@ END
 apt-get install openssh-server -qq > /dev/null
 cat <<'END'
 +--------------------------------------------------------+
-+ Openssh server has been successfully installed         +
++ OpenSSH Server se ha instalado satisfactoriamente.     +
 +--------------------------------------------------------+
 END
 
@@ -43,7 +43,7 @@ END
 apt-get install rsync -qq > /dev/null
 cat <<'END'
 +-----------------------------------------------+
-+ Rsync has been successfully installed         +
++ Rsync se ha instalado satisfactoriamente.     +
 +-----------------------------------------------+
 END
 
@@ -66,6 +66,6 @@ apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docke
 systemctl enable docker
 cat <<'END'
 +------------------------------------------------+
-+ Docker has been successfully installed         +
++ Docker se ha instalado satisfactoriamente.     +
 +------------------------------------------------+
 END
