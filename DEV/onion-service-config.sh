@@ -25,15 +25,20 @@ END
 # Here your Onion Services links
 
 cat <<'END'
-+----------------------------------------------------------------------------------------------------------------+
-Recuerde que este es el enlace que sus lectores deben utilizar para acceder a su nuevo blog utilizando Tor Browser
++---------------------------------------------------------+
++ Recuerde que este es el enlace que sus lectores         +
++ deben utilizar para acceder a su nuevo blog utilizando  +
++ Tor Browser                                             +
++---------------------------------------------------------+
 END
 cat /var/lib/tor/torified-blog/hostname
 
 cat <<'END'
-+----------------------------------------------------------------------------------------------------------------+
-Recuerde que este es el que únicamente usted debe utilizar para administrar los contenidos de su blog mediante
-una conexión SSH segura
++---------------------------------------------------------+
++ Recuerde que este es el que únicamente usted debe       +
++ utilizar para administrar los contenidos de su blog     +
++ mediante una conexión SSH segura                        +
++---------------------------------------------------------+
 END
 cat /var/lib/tor/torified-ssh/hostname
 

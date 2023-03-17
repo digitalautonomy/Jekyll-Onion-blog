@@ -6,6 +6,13 @@ set -e
 
 apt update
 
+cat <<'END'
++---------------------------------------------+
++ The installation has been started           +
++ this will take a few minutes                +
++---------------------------------------------+
+END
+
 # Tor installation
 apt install tor -qq > /dev/null
 cat <<'END'
