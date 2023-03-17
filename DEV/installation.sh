@@ -4,7 +4,7 @@ set -e
 
 # This script is useful to install all the prerequisites needed to make and launch your new Jekyll blog using Tor
 
-apt update
+apt-get update -qq > /dev/null
 
 cat <<'END'
 +---------------------------------------------+
@@ -14,7 +14,7 @@ cat <<'END'
 END
 
 # Tor installation
-apt install tor -qq > /dev/null
+apt-get install tor -qq > /dev/null
 cat <<'END'
 +---------------------------------------------+
 + Tor has been successfully installed         +
@@ -22,7 +22,7 @@ cat <<'END'
 END
 
 # Openssh installation
-apt install openssh-server -qq > /dev/null
+apt-get install openssh-server -qq > /dev/null
 cat <<'END'
 +--------------------------------------------------------+
 + Openssh server has been successfully installed         +
@@ -30,7 +30,7 @@ cat <<'END'
 END
 
 # Rsync installation
-apt install rsync -qq > /dev/null
+apt-get install rsync -qq > /dev/null
 cat <<'END'
 +-----------------------------------------------+
 + Rsync has been successfully installed         +
@@ -48,7 +48,7 @@ echo \
 $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 chmod a+r /etc/apt/keyrings/docker.gpg
-apt-get update
+apt-get update -qq > /dev/null
 
 apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -qq > /dev/null
 
