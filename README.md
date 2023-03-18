@@ -43,9 +43,17 @@ Se deben conocer del servidor:
 
 #### Instrucciones en el cliente
 
-Ejecutar el siguiente comando en la terminal:
+Ejecutar el siguiente comando en la terminal (habiendo reemplazado los valores entre corchetes):
 
-    `ssh {user}@{ip} "wget -qO - {url} && bash"`
+`ssh {user}@{ip} "wget -O- https://raw.githubusercontent.com/digitalautonomy/Jekyll-Onion-blog/main/DEV/bootstrap-script.sh && bash"`
+
+`{user}` debe ser reemplazado por el nombre de usuario al que se tiene acceso en el servidor.
+
+`{ip}` debe ser reemplazado la dirección IP local del servidor.
+
+Un ejemplo con valores falsos se vería así:
+
+`ssh pepito@192.168.1.3 "wget -O- https://raw.githubusercontent.com/digitalautonomy/Jekyll-Onion-blog/main/DEV/bootstrap-script.sh && bash"`
 
 Ejecutar este comando hará que se le solicite la contraseña del usuario `root` **del servidor** una vez y posiblemente dos veces.
 
