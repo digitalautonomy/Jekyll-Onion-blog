@@ -6,6 +6,17 @@ cd Jekyll-Onion-blog-main/DEV/
 
 dev_dir=$(pwd)
 
+cat << END
++---------------------------------------------------------------------+
+  Se iniciará el proceso de instalación y configuración de su
+  servidor de Jekyll sobre Tor.
+
+  ¡Esto tomará unos instantes!
+
+  Por favor introduzca la contraseña del usuario administrador (root).
++---------------------------------------------------------------------+
+END
+
 su - -c "$dev_dir/docker-installation.sh $USER && $dev_dir/config-blog-over-tor.sh"
 
 newgrp - docker <<EONG
