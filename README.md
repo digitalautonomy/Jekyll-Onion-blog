@@ -13,11 +13,9 @@ Se tienen dos requisitos:
 
 1. Una computadora en la que se publicará el blog. Debe tener sistema operativo [Debian](https://www.debian.org/releases/stable/installmanual), con las siguientes características:
 
-    1. No tener entorno gráfico. Esto se hace para no tener componentes innecesarios que además pueden comprometer la seguridad de la computadora (y por lo tanto de quién la posee).
+    1. No tener entorno gráfico. Esto se hace para no tener componentes innecesarios que pueden afectar al rendimiento de la computadora y además pueden comprometer la seguridad de ella (y por lo tanto de quién la posee).
 
     2. Tener SSH Server instalado y corriendo para poder usar la computadora remotamente.
-
-    3. Conocer la dirección IP local de la computadora, con el mismo objetivo del punto anterior: Conectarse remotamente. La dirección IP local puede obtenerse ejecutando el siguiente comando en la terminal de la computadora (que es Debian): `hostname -I`.
 
 Desde ahora llamaremos a esta computadora "El servidor".
 
@@ -35,11 +33,11 @@ En estas instrucciones se configurará el servidor para poder publicar nuestro b
 
 Se deben conocer del servidor:
 
-1. El nombre de usuario y contraseña del servidor.
+1. El nombre de usuario y contraseña de un usuario del servidor.
 
 2. La contraseña del usuario `root`.
 
-2. La dirección IP local del servidor. Esto se logra escribiendo en la terminal de servidor el comando `hostname -I`.
+3. La dirección IP local del servidor. Se puede obtener escribiendo en la terminal de servidor el comando `hostname -I`.
 
 #### Instrucciones en el cliente
 
@@ -57,133 +55,16 @@ Un ejemplo con valores falsos se vería así:
 
 Ejecutar este comando hará que se le solicite la contraseña del usuario `root` **del servidor** una vez y posiblemente dos veces.
 
-Tras terminar, se le entregará un comando que debe ejecutar en el cliente. Este comando contiene un enlace onion que servirá para conectarse con SSH al servidor desde cualquier lugar usando la red Tor. **No comparta este comando con nadie**.
-
 ### Segunda etapa
 
-#### Añada permisos a su usuario
+Tras terminar el paso anterior, se le entregará un comando que debe ejecutar en el cliente. Este comando contiene un enlace onion que servirá para conectarse con SSH al servidor desde cualquier lugar usando la red Tor. **No comparta este comando con nadie**.
 
-> En adelante, reemplace `{tu-usuario}` con su nombre de usuario.
+La ejecución de este comando hará que se instalen las dependencias necesarias para que el blog funcione y hará configuraciones para desplegarlo y publicarlo en la red Tor.
 
-La terminal le pedirá la contraseña del usuario root, introdúzcala.
+Cuando esta etapa termine, se imprimirá en la terminal un aviso con el enlace onion para acceder al blog, que para este momento **ya será accesible** desde cualquier lugar en la red Tor.
 
-    $ su - -c "cd /home/$USER/Jekyll-Onion-blog-main/DEV/; ./installation.sh"
+## Haciendo modificaciones al blog 
 
-Ahora, 
+### Añadiendo posts al blog
 
-    $ ./docker.sh
-
-Verás algunas confirmaciones en tu pantalla indicando que ha sido exitosa la instalación.
-
-(TODO: these need to be done as root, no?)
-
-     $ groupadd docker 
-     $ usermod -aG docker {tu-usuario}
-
-Reinicia tu equipo , puedes hacerlo manualmente o con el comando 
-
-(TODO: root, right?)
-
-    $ init 6
-
-en la terminal.
-
-De nuevo en la terminal.
-
-    $ cd Jekyll-Onion-blog-main/DEV
-    $ ./docker.sh
-
-Luego,
-
-    $ su - -c "/home/$USER/Jekyll-Onion-blog-main/DEV/onion-service-config.sh"
-    $ su - -c "/home/$USER/Jekyll-Onion-blog-main/DEV/onion-get-links-and-keys.sh"
-
-Este comando le arrojará información importante, por favor guardela.
-
-    +---------------------------------------------------------+
-    + Recuerde que este es el enlace que sus lectores         +
-    + deben usar para acceder a su nuevo blog utilizando      +
-    + Tor Browser.                                            +
-    +---------------------------------------------------------+
-    {link-onion-blog.onion}
-
-    cat <<'END'
-    +---------------------------------------------------------+
-    + Recuerde que este es el enlace que únicamente usted     +
-    + debe utilizar para administrar los contenidos de su     +
-    + blog mediante una conexión SSH segura.                  +
-    +---------------------------------------------------------+
-    {link-onion-ssh.onion}
-
-## Conectando al servidor mediante Tor y SSH
-
-Tor y SSH le permitiran manejar su servidor de manera segura y anonima.
-Para poder conectarse debe primero instalar SSH y Tor en el cliente.
-
-Para esto,
-
-    su-
-
-Y,
-
-    apt install openssh-client ;
-    apt install tor
-
-
-Luego para conectarse debe tener en cuenta el link de conexion SSH que obtuvo del paso anterior, recuerde mantener este link en secreto.
-
-    torify ssh {su-usuario}@{link-onion-ssh.onion} 
-
-### NOTA
-Si el servidor esta en su red local puede hacer una coneccion SSH la Ip del servidor. Para esto recuerde que la IP local puede cambiar asi que tendra que conectarse fisicamente el servidor y obtener la IP. Por esto y por seguridad le recomendamos usar el comando anterior.
-
-Este comando le pedira confirmar y la clave del usuario de su servidor, una vez verificado podra hacer uso normal de el servidor por este medio.
-
-
-
-## Publicando el contenido 
-
-### Personalice el blog.
-
-Puedes ver las [Intrucciones de personalización](https://github.com/digitalautonomy/Jekyll-Onion-blog/tree/main/DEV) en el enlace.
-
-### Publicando el blog en la red Tor
-
-La salida del último script le ha dado las claves para compartir **por medios seguros** con sus lectores.
-Será un link.onion al que ellos usando Tor Browser se pueden conectar para consultar el blog.
-
-
-## Creando nuevos post 
-
-Jekyll es un generador de sitios estáticos que utiliza Markdown para describir el contenido que se desea mostrar. Puede usar editores de Markdown como [Ghost writer](https://ghostwriter.kde.org/) o  [Mark text](https://github.com/marktext/marktext) para crear facilmente sus post.
-
-> Al crear su contenido cuide su anonimato.
-
-Tenga en cuenta que esta infraestructura de blog solo admite texto e imágenes.
-
-## Publicando sus nuevos post
-
-### Conectese a su cliente
-
-Conecta el servidor por WiFi o por cable ethernet a la misma red que el cliente.
-
-Inserta la contraseña de superusuario establecida, da enter
-
-
-En las siguientes líneas tienes que cambiar `user` por el nombre de usuario del servidor y `192.168.10.1` por la dirección IP retornada en el paso anterior.
-
-    $ ssh user@192.168.10.10 "apt install openssh-client"
-
-La terminal te pedirá confirmación para realizar la descarga, después pedirá la contraseña del usuario `user` del Debian.
-
-### Enviando archivos con Rsync
-
-## Acerca de los desarrolladores
-
-Este proyecto fue desarrollado por la ONG Centro de Autonomía Digital, establecida en Quito, Ecuador.
-
-## Nota final
-
-Este proyecto está pensado para activistas de todo le sur global, para protejer su privacidad, esperamos sea de ayuda.
-
-
+Hemos creado una plantilla para posts, que tiene la estructura necesaria para que el archivo sea correctamente interpretado por Jekyll, el generador de sitios que usamos para publicar el blog. Esta plantilla se encuentra [aquí](https://github.com/digitalautonomy/Jekyll-Onion-blog/blob/main/DEV/post_template.md) y las instrucciones para modificarla (y para modificar el blog en general) se encuentran [aquí](https://github.com/digitalautonomy/Jekyll-Onion-blog/blob/main/DEV/README.md).
