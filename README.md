@@ -5,42 +5,53 @@ En este repositorio recopilamos la información necesaria para crear un blog an�
 
 El resultado será un blog publicado en la red Tor que podrá ser accedido por cualquier persona usando el navegador [Tor](https://www.torproject.org/download/) y podrá ser actualizado desde cualquier computadora con conexión a internet.
 
-> Este tutorial fue probado en máquinas con Debian Testing.
+Este tutorial fue probado en máquinas con Debian Testing.
 
-## Requisitos de la computadora
+## Requisitos
 
-1. Tener sistema operativo [Debian](https://www.debian.org/releases/stable/installmanual).
+Se tienen dos requisitos:
 
-> Una alternativa fácil y segura a instalar Debian es usar [Tails](https://tails.boum.org/).
+1. Una computadora en la que se publicará el blog. Debe tener sistema operativo [Debian](https://www.debian.org/releases/stable/installmanual), con las siguientes características:
 
-## Configurando el servidor en la computadora
+    1. No tener entorno gráfico. Esto se hace para no tener componentes innecesarios que además pueden comprometer la seguridad de la computadora (y por lo tanto de quién la posee).
 
-Esto configurará el servidor Jekyll para poder publicar nuestro blog.
+    2. Tener SSH Server instalado y corriendo para poder usar la computadora remotamente.
 
-#### Descargando los archivos necesarios
+    3. Conocer la dirección IP local de la computadora, con el mismo objetivo del punto anterior: Conectarse remotamente. La dirección IP local puede obtenerse ejecutando el siguiente comando en la terminal de la computadora (que es Debian): `hostname -I`.
 
-En una terminal ejecute en el mismo orden los siguientes comandos:
+Desde ahora llamaremos a esta computadora "El servidor".
 
-    $ su -c "apt update && apt install unzip"
+2. Otra computadora para conectarse de manera remota al servidor. Esta computadora debe tener una distribución GNU/Linux, SSH Client y Tor. **Se recomienda muy insistentemente** que esta computadora se use con [Tails](https://tails.boum.org/install/download/), pues es una distribución diseñada para proteger al usuario de la vigilancia y la censura.
 
-La terminal le pedirá la contraseña del usuario root, introdúzcala.
+Desde ahora llamaremos a esta computadora "el cliente".
 
-Luego, descargue y descomprima este repositorio, así:
+## Configurando el servidor
 
-    $ cd ~ 
-    $ wget https://github.com/digitalautonomy/Jekyll-Onion-blog/archive/refs/heads/main.zip
-    $ unzip main.zip
-    
-#### Entrando en la carpeta con los códigos
+En estas instrucciones se configurará el servidor para poder publicar nuestro blog.
 
-Después, entre en la carpeta del archivo descomprimido y de permisos de ejecución a la carpeta DEV y entre en ella:
+### Primera etapa
 
-    $ cd Jekyll-Onion-blog-main/DEV
-    $ chmod +x *.sh
+#### Instrucciones en el servidor
 
-Si siguió los pasos correctamente, la terminal estará ubicada en:
+Se deben conocer del servidor:
 
-    ~/Jekyll-Onion-blog-main/DEV/$
+1. El nombre de usuario y contraseña del servidor.
+
+2. La contraseña del usuario `root`.
+
+2. La dirección IP local del servidor. Esto se logra escribiendo en la terminal de servidor el comando `hostname -I`.
+
+#### Instrucciones en el cliente
+
+Ejecutar el siguiente comando en la terminal:
+
+    `ssh {user}@{ip} "wget -qO - {url} && bash"`
+
+Ejecutar este comando hará que se le solicite la contraseña del usuario `root` **del servidor** una vez y posiblemente dos veces.
+
+Tras terminar, se le entregará un comando que debe ejecutar en el cliente. Este comando contiene un enlace onion que servirá para conectarse con SSH al servidor desde cualquier lugar usando la red Tor. **No comparta este comando con nadie**.
+
+### Segunda etapa
 
 #### Añada permisos a su usuario
 
