@@ -18,7 +18,7 @@ ssh_hostname=$(cat /var/lib/tor/torified-ssh/hostname)
 echo $ssh_hostname > /tmp/ssh_hostname
 chmod 666 /tmp/ssh_hostname
 
-cat <<'END'
+cat << END
 +---------------------------------------------------------+
 + El Onion Service para utilizar SSH sobre Tor se ha      +
 + configurado satisfactoriamente                          +
