@@ -9,17 +9,17 @@ export DEBIAN_FRONTEND=noninteractive
 
 # This script is useful to install all the prerequisites needed to make and launch your new Jekyll blog using Tor
 
-apt-get update -q > $TMPATH
+apt-get update > $TMPATH
 
-cat <<'END'
+cat <<END
 +---------------------------------------------+
 + La instalación de Docker se ha iniciado.    +
-+ Este proceso tomará algunos minutos.        +`
++ Este proceso tomará algunos minutos.        +
 +---------------------------------------------+
 END
 
 # Docker intallation
-apt-get -y install --no-install-recommends ca-certificates curl gnupg lsb-release -q > $TMPATH
+apt-get -y install --no-install-recommends ca-certificates curl gnupg lsb-release > $TMPATH
 
 mkdir -m 0755 -p /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
@@ -29,16 +29,16 @@ echo \
 $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list > $TMPATH
 
 chmod a+r /etc/apt/keyrings/docker.gpg
-apt-get update -q > $TMPATH
+apt-get update > $TMPATH
 
-apt-get -y install --no-install-recommends docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -q > $TMPATH
+apt-get -y install --no-install-recommends docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin > $TMPATH
 
 # put docker as service
-systemctl enable docker
-cat <<'END'
+systemctl enable docker > $TMPATH
+cat <<END
 +------------------------------------------------+
 + Docker se ha instalado satisfactoriamente.     +
 +------------------------------------------------+
 END
 
-echo "El log de la instalacion lo puede encontrar en $TMPATH"
+echo "El log de la instalación lo puede encontrar en $TMPATH"

@@ -8,9 +8,9 @@ dev_dir=$(pwd)
 
 su -c "$dev_dir/docker-installation.sh && $dev_dir/config-blog-over-tor.sh"
 
-blog_hostname=$(cat /var/lib/tor/torified-blog/hostname)
+blog_hostname=`cat /tmp/blog_hostname`
 
-cat <<'END'
+cat <<END
 +---------------------------------------------------------+
  Recuerde que este es el enlace que sus lectores
  deben usar para acceder a su nuevo blog utilizando

@@ -10,13 +10,13 @@ cp /var/lib/tor/torified-blog/hs_ed25519_public_key /root/blog-onion-keys-backup
 cp /var/lib/tor/torified-ssh/hs_ed25519_secret_key /root/ssh-onion-keys-backup
 cp /var/lib/tor/torified-ssh/hs_ed25519_public_key /root/ssh-onion-keys-backup
 
-cat <<'END'
+cat <<END
 +---------------------------------------------------------+
 + Las claves públicas y privadas para el blog fueron      +
-+ copiadas en root/blog-keys                              +
++ copiadas en /root/blog-onion-keys-backup                +
 +                                                         +
 + Las claves públicas y privadas para la conexión SSH     +
-+ fueron copiadas en root/ssh-keys                        +
++ fueron copiadas en /root/ssh-onion-keys-backup          +
 +                                                         +
 + RECOMENDACIÓN: Copie estas dos carpetas a una           +
 + computadora segura y bórrelas de esta computadora.      +
