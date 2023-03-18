@@ -15,7 +15,7 @@ done
 
 ssh_hostname=$(cat /var/lib/tor/torified-ssh/hostname)
 
-cat $ssh_hostname > /tmp/ssh_hostname
+echo $ssh_hostname > /tmp/ssh_hostname
 chmod 666 /tmp/ssh_hostname
 
 cat <<'END'

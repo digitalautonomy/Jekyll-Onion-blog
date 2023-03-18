@@ -6,18 +6,18 @@ set -e
 
 export DEBIAN_FRONTEND=noninteractive
 
-apt -qq update
+apt-get -qq update
 
-apt -y -qq install --no-install-recommends apt-transport-https gnupg
+apt-get -y -qq install --no-install-recommends apt-transport-https gnupg
 
 echo \
 "deb     [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org $(lsb_release -cs) main
 deb-src [signed-by=/usr/share/keyrings/tor-archive-keyring.gpg] https://deb.torproject.org/torproject.org $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/tor.list
 
-wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor | tee /usr/share/keyrings/tor-archive-keyring.gpg
+wget -qO- https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --dearmor > /usr/share/keyrings/tor-archive-keyring.gpg
 
-apt -qq update
-apt -y -qq install --no-install-recommends tor deb.torproject.org-keyring
+apt-get -qq update
+apt-get -y -qq install --no-install-recommends tor deb.torproject.org-keyring
 
 cat <<'END'
 +---------------------------------------------+
