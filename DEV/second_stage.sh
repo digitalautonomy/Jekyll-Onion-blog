@@ -6,7 +6,7 @@ cd Jekyll-Onion-blog-main/DEV/
 
 dev_dir=$(pwd)
 
-su -c "$dev_dir/docker-installation.sh && $dev_dir/config-blog-over-tor.sh"
+su - -c "$dev_dir/docker-installation.sh && $dev_dir/config-blog-over-tor.sh"
 
 newgrp - docker
 
