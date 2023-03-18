@@ -9,6 +9,17 @@ if [ -z "$existing_unzip" ]; then
   su -c "apt-get -qq update && apt-get -y -qq install --no-install-recommends unzip > /dev/null"
 fi
 
+cat << END
++-------------------------------------------------------------------+
+  Se iniciará el proceso de instalación y configuración de una
+  manera más segura de comunicación con el servidor para que pueda
+  continuar con la instalación y configuración de su blog Jekyll
+  sobre Tor.
+
+  ¡Esto tomará unos instantes!
++-------------------------------------------------------------------+
+END
+
 wget -q https://github.com/digitalautonomy/Jekyll-Onion-blog/archive/refs/heads/main.zip
 
 unzip main.zip > /dev/null
