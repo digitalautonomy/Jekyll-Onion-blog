@@ -36,7 +36,7 @@ apt-get -y install --no-install-recommends docker-ce docker-ce-cli containerd.io
 # put docker as service
 systemctl enable docker > $TMPATH
 
-su -c "usermod -aG docker $USER && newgrp - docker"
+usermod -aG docker $USER
 
 cat <<END
 +------------------------------------------------+
