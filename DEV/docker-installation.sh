@@ -3,6 +3,10 @@
 set -e
 
 # Should be run as root
+# This needs the username of the user to add as an argument
+
+regular_user=$1
+
 
 TMPATH=`mktemp --tmpdir="/tmp" jekyll-onion-installation-log.XXXXXX`
 export DEBIAN_FRONTEND=noninteractive
@@ -36,7 +40,7 @@ apt-get -y install --no-install-recommends docker-ce docker-ce-cli containerd.io
 # put docker as service
 systemctl enable docker > $TMPATH
 
-usermod -aG docker $USER
+usermod -aG docker $regular_user
 
 cat <<END
 +------------------------------------------------+
