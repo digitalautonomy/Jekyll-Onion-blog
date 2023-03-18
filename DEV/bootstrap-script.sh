@@ -6,7 +6,7 @@ existing_unzip=`which unzip || echo ""`
 if [ -z "$existing_unzip" ]; then
   echo ""
   echo "We have to install the 'unzip' command. You will now be asked for the root password of the server:"
-  su -c "apt update && apt -y install --no-install-recommends unzip"
+  su -c "apt update && apt -y -qq install --no-install-recommends unzip"
 fi
 
 wget https://github.com/digitalautonomy/Jekyll-Onion-blog/archive/refs/heads/main.zip
@@ -21,11 +21,12 @@ dev_dir=$(pwd)
 
 chmod +x $dev_dir/*.sh
 
-  echo ""
-  echo "We have to install several packages. You will now be asked for the root password of the server:"
+echo ""
+echo "We have to install several packages. You will now be asked for the root password of the server:"
 su -c "$dev_dir/install-tor.sh && $dev_dir/config-ssh-over-tor.sh"
 
-ssh_hostname=$(cat /var/lib/tor/torified-ssh/hostname)
+# TODO: we have to be root to read this file
+ssh_hostname=$(cat /tmp/ssh_hostname)
 
 cat <<'END'
 +---------------------------------------------------------+
