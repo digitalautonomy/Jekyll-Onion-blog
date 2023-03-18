@@ -8,6 +8,13 @@ export DEBIAN_FRONTEND=noninteractive
 
 apt-get update > /dev/null
 
+cat << END
++---------------------------------------------+
++ Se ha iniciado la instalación de Tor.       +
++ Este proceso tomará algunos minutos.        +
++---------------------------------------------+
+END
+
 apt-get -y install --no-install-recommends apt-transport-https gnupg > /dev/null
 
 echo \

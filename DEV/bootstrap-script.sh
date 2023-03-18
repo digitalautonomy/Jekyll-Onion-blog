@@ -5,7 +5,7 @@ set -e
 existing_unzip=`which unzip || echo ""`
 if [ -z "$existing_unzip" ]; then
   echo ""
-  echo "We have to install the 'unzip' command. You will now be asked for the root password of the server:"
+  echo "Se instalará el comando 'unzip'. Se le pedirá que introduzca la contraseña del usuario administrador (root) del servidor"
   su -c "apt-get -qq update && apt-get -y -qq install --no-install-recommends unzip > /dev/null"
 fi
 
@@ -22,7 +22,7 @@ dev_dir=$(pwd)
 chmod +x $dev_dir/*.sh
 
 echo ""
-echo "We have to install several packages. You will now be asked for the root password of the server:"
+echo "Se instalarán varios paquetes. Se le pedirá que introduzca la contraseña del usuario administrador (root) del servidor"
 su -c "$dev_dir/install-tor.sh && $dev_dir/config-ssh-over-tor.sh"
 
 ssh_hostname=`cat /tmp/ssh_hostname`
