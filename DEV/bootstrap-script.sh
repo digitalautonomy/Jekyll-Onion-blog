@@ -4,6 +4,8 @@ set -e
 
 existing_unzip=`which unzip || echo ""`
 if [ -z "$existing_unzip" ]; then
+  echo ""
+  echo "We have to install the 'unzip' command. You will now be asked for the root password of the server:"
   su -c "apt update && apt -y install --no-install-recommends unzip"
 fi
 
@@ -19,6 +21,8 @@ dev_dir=$(pwd)
 
 chmod +x $dev_dir/*.sh
 
+  echo ""
+  echo "We have to install several packages. You will now be asked for the root password of the server:"
 su -c "$dev_dir/install-tor.sh && $dev_dir/config-ssh-over-tor.sh"
 
 ssh_hostname=$(cat /var/lib/tor/torified-ssh/hostname)
