@@ -2,7 +2,7 @@
 
 set -e
 
-existing_unzip=`which unzip`
+existing_unzip=`which unzip || echo ""`
 if [ -z "$existing_unzip" ]; then
   su -c "apt update && apt -y install --no-install-recommends unzip"
 fi
@@ -25,10 +25,10 @@ ssh_hostname=$(cat /var/lib/tor/torified-ssh/hostname)
 
 cat <<'END'
 +---------------------------------------------------------+
-  ADVERTENCIA: ¡Este enlace Onion debe ser utilizado únicamente por el administrador del blog!
+  Se ha configurado una manera más segura para continuar con el proceso de instalación.
+  Por favor copie el siguiente comando y siga las instrucciones.
 
-  We have set up a more secure way of continuing the installation
-  process. Please copy the following command and keep following the instructions!
+  ¡No comparta este comando con nadie!
 
      torify ssh $USER@$ssh_hostname "$dev_dir/second_stage.sh"
 +---------------------------------------------------------+
