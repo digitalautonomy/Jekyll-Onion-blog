@@ -43,11 +43,11 @@ Se deben conocer del servidor:
 
 Ejecutar el siguiente comando en la terminal (habiendo reemplazado los valores entre corchetes):
 
-`ssh {user}@{ip} "wget -O- https://raw.githubusercontent.com/digitalautonomy/Jekyll-Onion-blog/main/DEV/bootstrap-script.sh && bash"`
+`ssh -t {user server}@{server ip} 'wget -q https://raw.githubusercontent.com/digitalautonomy/Jekyll-Onion-blog/main/DEV/bootstrap-script.sh && bash bootstrap-script.sh'`
 
-`{user}` debe ser reemplazado por el nombre de usuario al que se tiene acceso en el servidor.
+`{user server}` debe ser reemplazado por el nombre de usuario al que se tiene acceso en el servidor.
 
-`{ip}` debe ser reemplazado la dirección IP local del servidor.
+`{server ip}` debe ser reemplazado la dirección IP local del servidor.
 
 Un ejemplo con valores falsos se vería así:
 
