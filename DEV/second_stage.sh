@@ -8,9 +8,9 @@ dev_dir=$(pwd)
 
 su - -c "$dev_dir/docker-installation.sh $USER && $dev_dir/config-blog-over-tor.sh"
 
-newgrp - docker
-
+newgrp - docker <<EONG
 ./docker.sh
+EONG
 
 blog_hostname=`cat /tmp/blog_hostname`
 
