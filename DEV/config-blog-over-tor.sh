@@ -4,15 +4,9 @@
 
 set -e
 
-echo "HiddenServiceDir /var/lib/tor/torified-blog/" >> /etc/tor/torrc ;
-echo "HiddenServicePort 80 0.0.0.0:4000" >> /etc/tor/torrc ;
+. $(dirname "$0")/helpers.sh
 
-systemctl reload tor
-
-while [ ! -f /var/lib/tor/torified-blog/hostname ]; do
-  echo "Waiting for Tor to create onion service ..."
-  sleep 1
-done
+ensure_hidden_service "torified-blog" 80 4000
 
 blog_hostname=$(cat /var/lib/tor/torified-blog/hostname)
 

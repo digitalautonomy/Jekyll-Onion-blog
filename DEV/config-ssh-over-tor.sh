@@ -4,14 +4,9 @@
 
 set -e
 
-echo "HiddenServiceDir /var/lib/tor/torified-ssh/" >> /etc/tor/torrc
-echo "HiddenServicePort 22 127.0.0.1:22" >> /etc/tor/torrc
+. $(dirname "$0")/helpers.sh
 
-systemctl reload tor
-while [ ! -f /var/lib/tor/torified-ssh/hostname ]; do
-  echo "Waiting for Tor to create onion service ..."
-  sleep 1
-done
+ensure_hidden_service "torified-ssh" 22 22
 
 ssh_hostname=$(cat /var/lib/tor/torified-ssh/hostname)
 
