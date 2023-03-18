@@ -9,6 +9,7 @@ dev_dir=$(pwd)
 su - -c "$dev_dir/docker-installation.sh $USER && $dev_dir/config-blog-over-tor.sh"
 
 newgrp - docker <<EONG
+cd Jekyll-Onion-blog-main/DEV
 ./docker.sh
 EONG
 
