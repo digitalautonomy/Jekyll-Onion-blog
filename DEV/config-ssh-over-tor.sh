@@ -6,7 +6,7 @@ set -e
 
 . $(dirname "$0")/helpers.sh
 
-ensure_hidden_service "torified-ssh" 22 22
+ensure_hidden_service "torified-ssh" 22 22 > /dev/null
 
 ssh_hostname=$(cat /var/lib/tor/torified-ssh/hostname)
 
