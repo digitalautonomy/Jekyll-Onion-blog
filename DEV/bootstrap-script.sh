@@ -34,6 +34,6 @@ cat << END
 
   ¡No comparta este comando con nadie!
 
-     torify ssh $USER@$ssh_hostname "$dev_dir/second_stage.sh"
+     torify ssh -t $USER@$ssh_hostname "$dev_dir/second_stage.sh"
 +---------------------------------------------------------+
 END
