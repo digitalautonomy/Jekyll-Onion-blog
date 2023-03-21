@@ -61,16 +61,15 @@ del _servidor_, utilizando la terminal de comando debe ejecutar
 
 donde `{server user}` debe ser reemplazado por el nombre de usuario al que se tiene acceso en el servidor y `{server ip}` debe reemplazarse con la dirección IP local del servidor.
 
+Se le pedirá que ingrese la contraseña de _usuario_ en el servidor.
+
 Este comando ejecutará en _el servidor_ el `bootstrap-script` diseñado para instalar Tor en el servidor y configurar un Onion Service
 que podrá utilizarse en adelante para comunicarse con _el servidor_ usando SSH sobre Tor desde cualquier lugar del mundo.
 
+La ejecución del script `bootstrap-script` le solicitará el ingreso de la contraseña de `root` en diferentes momentos de acuerdo
+los procedimientos que se estén ejecutando en el servidor.
 
-
-Un ejemplo del comando con valores falsos se vería así:
-
-`ssh -t pepito@192.168.1.3 'wget -q https://raw.githubusercontent.com/digitalautonomy/Jekyll-Onion-blog/main/DEV/bootstrap-script.sh && bash bootstrap-script.sh'`
-
-Una vez terminada la ejecucion, será algo como:
+Una vez terminada la ejecución del `bootstrap-script`, verá algo como:
 
     +---------------------------------------------------------+
     Se ha configurado una manera más segura para continuar con el proceso de instalación.
@@ -80,24 +79,31 @@ Una vez terminada la ejecucion, será algo como:
 
         torify ssh -t {server user}@{link.onion}"
     +---------------------------------------------------------+
-Debe continuar el proceso como lo indica el mensaje.
+
+Al ejecutar el comando de la última línea del anterior log, continuará con el proceso de instalación y configuración. Para
+empezar se le pedirá la contraseña del `usuario` para continuar.
+
+**PARA TENER EN CUENTA:** Copie **en un lugar seguro** el enlace onion (`{link.onion}`) que le da el log anterior, necesitará
+usarlo cada vez que quiera conectarse de forma remota a su servidor para configurar su blog o administrar sus contenidos.
+**No comparta este enlace con nadie**.
+
 ## Segunda etapa
 
-Tras terminar el paso anterior, se le entregará un comando que debe ejecutar **en el cliente**. Este comando contiene un enlace onion que servirá para conectarse con SSH al servidor desde cualquier lugar usando la red Tor. **No comparta este comando con nadie**. La terminal **en el cliente** será algo así:
+Tras ejecutar el comando anterior, se instalarán las dependencias necesarias para desplegar y servir su blog mediante un 
+servicio onion, se le pedirá que introduzca la contraseña del `root` en varias ocasiones, sea cuidadoso de no errar la contraseña
+para evitar tener que reiniciar el proceso en esta etapa.
 
-
-    $ torify ssh -t {server user}@{link.onion} {directorio instalación}/second_stage.sh""
-
-
-La ejecución de este comando hará que se instalen las dependencias necesarias para que el blog funcione y hará configuraciones para desplegarlo y publicarlo en la red Tor.
-
-Cuando esta etapa termine, se imprimirá en la terminal un aviso con el enlace onion para acceder al blog, que para este momento ya es accesible. En su terminal el programa le dara el link de el blog de la siguiente manera.
+Al finalizar la segunda etapa verá un log como el siguiente:
 
     +---------------------------------------------------------+
     Recuerde que este es el enlace que sus lectores
     deben usar para acceder a su nuevo blog utilizando
     Tor Browser: {link blog.onion}
     +---------------------------------------------------------+
+
+El enlace onion (`{link blog.onion}`) es el que debe proveer a sus lectores para que puedan acceder mediante Tor Browser a
+su blog. Manténgalo a buen resguardo y compártalo de forma segura evitando asociar datos que permitan identificarle. Evite
+utilizar cualquier enfoque para "_simplificar_" el enlace onion como el uso de acortadores de URL o códigos QR. 
 
 ## Haciendo modificaciones al blog
 
