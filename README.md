@@ -1,52 +1,70 @@
 # Desplegando un blog anónimo en Onion Services
 
-En este repositorio recopilamos la información necesaria para crear un blog anónimo en una computadora. El resultado será un blog publicado en la red Tor que podrá ser accedido por cualquier persona usando el navegador [Tor](https://www.torproject.org/download/) y podrá ser actualizado desde cualquier computadora con conexión a internet.
+En este repositorio se recopila la información necesaria para crear un blog anónimo en una computadora. El resultado será un blog publicado en la red Tor que podrá ser accedido por cualquier persona usando el navegador [Tor](https://www.torproject.org/download/) y podrá ser actualizado desde cualquier computadora con conexión a internet.
 
 Este procedimiento fue probado usando dos computadoras: Una con Debian Testing (que fue el servidor) y otra con Tails 5.9 (que fue el cliente).
 
 ## Requisitos
 
-Se tienen dos requisitos:
+Las tecnologías utilizadas para desplegar un blog en la forma que aquí se presenta son comunes a las principales plataformas
+o sistemas operativos, sin embargo, utilizar uno u otro puede ampliar la superficie de ataque y exponer en mayor o menor 
+medida a quien utiliza esta tecnología para publicar contenidos y a quienes acceden a dichos contenidos.
 
-1. Una computadora en la que se publicará el blog. Debe tener sistema operativo [Debian](https://www.debian.org/releases/stable/installmanual), con las siguientes características:
+Estos requerimientos están basados en la evaluación de criterios técnicos que maximizan la seguridad y reducen la superficie
+de ataque, nuestra recomendación es seguir las prácticas utilizadas aquí para proteger en la máxima medida posible la identidad
+de quien escribe contenidos en el blog y de sus lectores.
 
-    1. No tener entorno gráfico. Esto se hace para no tener componentes innecesarios que pueden afectar al rendimiento de la computadora y además pueden comprometer la seguridad de ella (y por lo tanto de quién la persona que controla el blog).
+1. **Servidor:** se denominará _servidor_ a la máquina que alojará el blog. Como servidor puede ser utilizada cualquier computadora 
+   con las siguientes especificaciones mínimas:
+   1. Procesador con tecnología de 64 bits.
+   2. RAM: 4 GB.
+   3. Almacenamiento: 20 GB.
+   4. Sistema Operativo: Debian GNU/Linux. Reducir la complejidad de la instalación contribuirá a reducir la superficie de ataque,
+      por lo que es altamente recomendable que _el servidor_ no tenga un entorno de escritorio instalado y configurado. Durante el
+      proceso de instalación debería utilizar un generador de claves aleatorias ([keepassxc](https://keepassxc.org/)) para generar
+      de forma segura contraseñas para el _cifrado del disco_, _root_ y el _usuario_.
+   5. SSH-Server: preferiblemente instalado desde la instalación del sistema operativo para reducir la interacción directa con
+      _el servidor_.
 
-    2. Tener SSH Server instalado y corriendo para poder usar la computadora remotamente.
+2. **Administrador:** se denominará _administrador_ a la máquina que utilizará el autor del blog para administrar _el servidor_ y publicar
+   nuevos posts. Como cliente nuestra recomendación es usar [Tails](https://tails.boum.org/). En caso de que no sea 
+   posible el uso de Tails, cualquier máquina con una distribución de GNU/Linux instalada y SSH-client será suficiente. En el caso
+   de la máquina _administrador_, nuestra recomendación es que no sea una máquina que permita ningún tipo de asociación con el autor
+   del blog o su posible identificación, por eso nos decantamos por Tails como la opción ideal en este caso.
 
-Desde ahora llamaremos a esta computadora "El servidor".
+3. **Cliente:** se denominará _cliente_ a la máquina que usarán los lectores del blog para acceder a los contenidos del blog.
+   El único requerimiento para el _cliente_ es utilizar [Tor Browser](https://www.torproject.org/download/).
 
-2. Otra computadora para conectarse de manera remota al servidor. Esta computadora debe tener una distribución GNU/Linux, SSH Client y Tor. **Se recomienda muy insistentemente** que esta computadora se use con [Tails](https://tails.boum.org/install/download/), pues es una distribución diseñada para proteger al usuario de la vigilancia y la censura.
+**Nota:** Aunque cada uno de los pasos a desarrollar para instalar, configurar y publicar el blog se han automatizado buscando
+simplificar el procedimiento para usuarios no técnicos, se requiere un conocimiento básico de la ejecución de comandos y administración
+de archivos en y mediante la terminal de comandos de GNU / Linux.
 
-Desde ahora llamaremos a esta computadora "El cliente".
+## Primera etapa: Configuración de un canal SSH sobre Tor para administrar _el servidor_ de forma segura.
 
-## Configurando el servidor
+Reducir la interacción directa con _el servidor_ es fundamental para reducir la posibilidad de dejar rastros que permitan 
+identificar al propietario del blog, por eso, en esta primera etapa se establecerá un canal seguro mediante el cual instalar,
+configurar y actualizar los contenidos del blog.
 
-En estas instrucciones se configurará el servidor para poder publicar nuestro blog.
+### En el servidor
 
-### Primera etapa
+Si se dispone de una instalación de SSH-Server desde la instalación del sistema operativo, en el servidor, este será el único
+momento en el que es necesario interactuar directamente con el _servidor_.
 
-#### Instrucciones en el servidor
+**Obtener la dirección IP local del servidor:** En una terminal de comandos debe ejecutar `$ hostname -I`.
 
-Se deben conocer del servidor:
+#### En el Administrador
 
-1. El nombre de usuario y contraseña de un usuario del servidor.
+Una vez conocida la IP local del servidor, desde la máquina que se esté utilizando como _administrador_, en la misma red local
+del _servidor_, utilizando la terminal de comando debe ejecutar
 
-2. La contraseña del usuario `root`.
+`$ ssh -t {server user}@{server ip} 'wget -q https://raw.githubusercontent.com/digitalautonomy/Jekyll-Onion-blog/main/DEV/bootstrap-script.sh && bash bootstrap-script.sh'`
 
-3. La dirección IP local del servidor. Se puede obtener escribiendo en la terminal de servidor el comando `hostname -I`.
+donde `{server user}` debe ser reemplazado por el nombre de usuario al que se tiene acceso en el servidor y `{server ip}` debe reemplazarse con la dirección IP local del servidor.
 
-#### Instrucciones en el cliente
+Este comando ejecutará en _el servidor_ el `bootstrap-script` diseñado para instalar Tor en el servidor y configurar un Onion Service
+que podrá utilizarse en adelante para comunicarse con _el servidor_ usando SSH sobre Tor desde cualquier lugar del mundo.
 
-Ejecutar el siguiente comando en la terminal (habiendo reemplazado los valores entre corchetes):
 
-    $ ssh -t {server user}@{server ip} 'wget -q https://raw.githubusercontent.com/digitalautonomy/Jekyll-Onion-blog/main/DEV/bootstrap-script.sh && bash bootstrap-script.sh'
-
-`{server user}` debe ser reemplazado por el nombre de usuario al que se tiene acceso en el servidor.
-
-`{server ip}` debe ser reemplazado la dirección IP local del servidor.
-
-Ejecutar este comando hará que se le solicite inicialmente la contraseña de `{server user}`, y luego la contraseña del usuario `root` **del servidor** una vez y posiblemente dos veces.
 
 Un ejemplo del comando con valores falsos se vería así:
 
