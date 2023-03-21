@@ -17,6 +17,13 @@ cat << END
 +---------------------------------------------------------------------+
 END
 
+existing_unzip=`which unzip || echo ""`
+if [ -z "$existing_unzip" ]; then
+  echo ""
+  echo "Se instalará el comando 'unzip'. por favor introduzca la contraseña del usuario administrador (root) del servidor"
+  su -c "apt-get update && apt-get -y install --no-install-recommends unzip > /dev/null && dev_dir/docker-installation.sh $USER && $dev_dir/config-blog-over-tor.sh"
+fi
+
 su - -c "$dev_dir/docker-installation.sh $USER && $dev_dir/config-blog-over-tor.sh"
 
 newgrp - docker <<EONG

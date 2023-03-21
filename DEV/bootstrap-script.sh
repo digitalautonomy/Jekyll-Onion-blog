@@ -2,13 +2,6 @@
 
 set -e
 
-existing_unzip=`which unzip || echo ""`
-if [ -z "$existing_unzip" ]; then
-  echo ""
-  echo "Se instalará el comando 'unzip'. por favor introduzca la contraseña del usuario administrador (root) del servidor"
-  su -c "apt-get -qq update && apt-get -y -qq install --no-install-recommends unzip > /dev/null"
-fi
-
 cat << END
 +-------------------------------------------------------------------+
   Se iniciará el proceso de instalación y configuración de una
