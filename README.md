@@ -1,17 +1,17 @@
 # Desplegando un blog anónimo en Onion Services
 
-Este proyecto está dirigido a periodistas, activistas, blogueros que por la naturaleza de su trabajo, los contenidos que publica 
+Este proyecto está dirigido a periodistas, activistas o blogueros que por la naturaleza de su trabajo, los contenidos que publica 
 o su modelo de amenaza, requieren de un grado superior de protección a su identidad al momento de hacer sus publicaciones.
 
-Siguiente las instrucciones a continuación, obtendrá un blog con la potencialidad de tener el máximo nivel de anonimato,
-siempre que sigas las recomendaciones aquí dadas.
+Siguiendo las instrucciones a continuación, obtendrá un blog con la potencialidad de tener el máximo nivel de anonimato,
+siempre que siga las recomendaciones aquí dadas.
 
 En este proyecto se utiliza Tor para proteger la identidad del autor del blog y sus lectores. Docker es usado para 
-soportar la instalación de dependencias y la ejecución de Jekyll. Se ha elegido Jekyll debido a que está destinado al 
-desarrollo de sitios web estáticos lo cual es necesario cuando se quiere reducir las características del contenido que 
-pueden exponer la identidad de los involucrados. Se recomienda que si quiere mantener el alto nivel de protección a su
-identidad y la de sus lectores - con la que se ha configurado este proyecto - no agregue contenidos como vídeos o archivos
-incrustados en sus posts.
+soportar la instalación de dependencias y la ejecución de Jekyll optimizando el proceso para el usuario. Se ha elegido 
+Jekyll debido a que está destinado al desarrollo de sitios web estáticos lo cual es necesario cuando se quiere reducir 
+las características del contenido que pueden exponer la identidad de los involucrados. Se recomienda que si quiere mantener
+el alto nivel de protección a su identidad y la de sus lectores - con la que se ha configurado este proyecto - no agregue
+contenidos como vídeos o archivos incrustados en sus posts.
 
 Este procedimiento fue probado usando una computadora con Debian Bookworm (servidor) y otra con Tails 5.9 (administrador).
 Sin embargo, los scripts desarrollados están verificados para que sean igualmente útiles en Debian Stable o cualquier
