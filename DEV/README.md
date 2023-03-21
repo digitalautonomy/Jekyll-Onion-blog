@@ -1,109 +1,107 @@
-# How to start with your Torified blog
+# Como empezar con el blog torificado
 
-The first thing to do with your new Torified blog is to add some custom configurations, but remember **DO NOT** put information that allows to identify to you. This template has the simplest content to do your blog completely anonymous, so you have to take care about what information you share on it.
+La primera cosa a hacer con su nuevo blog torificado es añadir algunas configuraciones, pero recuerde: **NO** ponga información que permitan identificarle. Esta plantilla tiene la configuración más simple para hacer a su blog completamente anónimo, así que tiene que tener cuidado con la información que comparte en este. 
 
-#### Warning
+## Advertencia
 
-For simplicity, we suggest to **ONLY** make changes on the folders and files we specify in these instructions.
+**Por simplicidad, sugerimos que sólo se hagan cambios en los directorios y archivos que especificamos en estas instrucciones.**
 
-## 1. Change logo
+**Advertencia: Tenga cuidado con el origen de la imagen que va a usar. En particular le recomendamos eliminar los metadatos de todos los archivos que suba al servidor**
+## 1. Cambiar logo
 
-To change the image logo you need to have an `.svg` file named `logo.svg` and stored in `/assets/images/`. Preferably this image must be a square image, if not it is going to  be deformed.
+Para cambiar el logo de la página se necesita tener un archivo en formato SVG llamado `logo.svg` que debe ser guardado en la carpeta `assets/images` del repositorio. Esta imagen debería ser cuadrada, pues de lo contrario se deformará al mostrarse.
 
-This change will modify the image that we show here.
+Este cambio va a modificar las imágenes que mostramos aquí:
 
-*Warning:*
-    please verify your logo is in SVG format.
+![Cambiar logo en el header](./images/change-logo-1.png)
 
-![Change logo](./images/change-logo.png)
+![Cambiar logo en el header](./images/change-logo-2.png)
 
-## 2. Change hero section in lading page
+## 2. Cambiar la sección *hero* en la página principal
 
-In order to change the hero section into the landing page, you have three elements that can be customized.
+En esta sección se pueden cambiar los siguientes elementos:
 
-1. **Description:** Go to the internationalization directory `_i18n` and find two files `en.yml` and `es.yml`. In each one of these, edit the tag `site.description` with your own description.
-
-2. **Slogan:** Go to the internationalization directory `_i18n` and find two files `en.yml` and `es.yml`. In each one of these, edit the tag `site.slogan` with your own slogan.
-
-Remember: do these two changes in both files to allow the page to show the text in both languages.
-
-3. **Background:** To change the background in the hero section, first you need have an image named `background-desktop.png` and replace with this the image with the same name into the directory `assets/images`.
-
-*Warning:*
-please verify your logo is format PNG, if it is JPG you can rename it as .png
+1. **Descripción:** Diríjase a `_i18n` que es el directorio de internacionalización, y encuentre los archivos `en.yml` y `es.yml`. En cada uno edite la etiqueta `site.description` con su propia descripción.
 
 
-![Change logo](./images/change-hero.png)
+2. **Eslogan:** Diríjase a `_i18n` que es el directorio de internacionalización, y encuentre los archivos `en.yml` y `es.yml`. En cada uno edite la etiqueta `site.slogan` con su propio eslogan.
 
-## 3. Change footer content
+**Recuerde: haga estos dos cambios en ambos archivos para que los cambios se vean reflejados en los dos idiomas**
 
-You can show your email and the corresponding GPG fingerprint (if you have them and you want to share them).
+3. **Imagen de fondo:** para cambiar el fondo de esta sección, primero necesita tener una imagen con el nombre `background-desktop.png` y copiela al directorio `assets/images`.
 
-#### Warning
-
-Be sure that the email you share is secure and anonymous. Use a service like [Riseup](https://riseup.net/) and similar.
-
-1. **Email:** Go to `_data/` directory and find the file `locations.yml`. In this file change the `name` under `- location: Email address` with your secure mail.
-
-2. **GPG fingerprint:** Go to `_data/` directory and find the file `locations.yml`. In this file change the `name` under `- location: GPG fingerprint` with the fingerprint.
-
-#### Note
-If you do not have a fingerprint delete the section `- location: GPG fingerprint`.
-
-# 4. Add posts to your blog
-
-When you have wroten a new post (in english or spanish) and you want to upload images, 
-you can use the template `post_template.md` in `/DEV` directory to do new posts.
+**Advertencia: La imagen seleccionada debe estar en formato PNG. En caso de que la imagen esté en formato JPG puede cambiar la extensión del archivo a `.png`.**
 
 
-If you want to do spanish and english versions of your post, the two files **must have the same file name** but each one must be stored in their respective directory. 
+![Cambio de la sección hero](./images/change-hero.png)
+
+## 3. Cambiar el contenido del *footer*
+
+Puede mostrar su dirección de correo electrónico y su correspondiente [*fingerprint* GPG](https://es.wikipedia.org/wiki/Huella_digital_de_clave_p%C3%BAblica#Creando_huellas_digitales_de_clave_p%C3%BAblica) (si los tiene y los desea compartir).
+
+**Advertencia: Asegurese de que el servicio de correo que usa es seguro y anónimo. Use un servicio como [Riseup](https://riseup.net/) y similares.**
+
+1. **Dirección de correo:** Diríjase al directorio `_data/` y encuentre el archivo `locations.yml`. En este archivo cambie el campo `name` bajo la línea `- location: email address` con la dirección de correo deseada.
+
+2. ***Fingerprint* GPG:** Diríjase al directorio `_data/` y encuentre el archivo `locations.yml`. En este archivo cambie el campo `name` bajo la línea `- location: GPG fingerprint` con el `fingerprint` GPG deseado.
+
+#### Nota
+
+Si no tiene un `fingerprint` GPG borre la línea `- location: GPG fingerprint` y las que están debajo de ella.
+
+# 4. Añadir posts al blog
+
+Cuando usted haya escrito unA nueva entrada (en inglés o español) y quiera subir imágenes, puede usar la plantilla `post_template.md` ubicada en el directorio `/DEV`.
+
+Si quiere versiones en español e inglés de sus entradas, los dos archivos **deben tener el mismo nombre**, pero cada uno de ellos debe ser guardado en su propio directorio.
+
+Para la versión en español use el directorio `/_i18n/es/_post` y para la versión en inglés `/_i18n/en/_post`.
+
+## Nombrar los archivos de las entradas correctamente
+
+El nombre del archivo de su entrada **debe** usar la siguiente sintaxis:
+
+    yyyy-mm-dd-titulo-de-su-entrada.md
+
+No se puede reemplazar `-` con ningún otro símbolo y en el título de su entrada reemplace los espacios con `-`.
+
+Por ejemplo: _titulo de su entrada_ deberia ser `titulo-de-su-entrada`.
 
 
-For the spanish version use the directory is `/_i18n/es/_post` and for the english version use the directory `/_i18n/en/_post`.
+Recuerde que el nombre del archivo de su entrada no es el mismo que el título de esta.
 
-## How to name correctly yours post files
+# Ejemplo
 
+Colocamos los siguientes archivos para las entradas en inglés y español en los directorios que especificamos.
 
-The name of your post fine **MUST** use this sintaxis **`yyyy-mm-dd-title-of-your-post.md`**. You can't replace `-` with any
-other symbol, and in the title of your post, replace spaces with `-`.
+## Español
 
-For example:  _title of your post_ should be `title-of-your-post`.
+![Español](./images/example_es.png)
 
-Remember the name of the post file is not the same as the title of the post.
+## Inglés
 
-#### Example
+![Inglés](./images/example_en.png)
 
-We located the next files for the post in English and Spanish located in the directories we specify.
+## Directorio de imágenes
 
-##### Spanish
-
-![Spanish](./images/example_es.png)
-
-##### English
-
-![English](./images/example_en.png)
-
-And we save the images as follows
-
-##### Images folder
+Guardamos las imagenes de la siguiente manera.
 
 ![Images folder](./images/example_images.png)
 
-You will see this as follows.
+Estos cambios se verán de la siguiente manera:
 
-##### Featured
+### Destacados
 
-![Featured](./images/example_featured.png)
+![Destacados](./images/example_featured.png)
 
-##### Blog Spanish visualization
+### Visualización del blog en español
 
-![Blog Spanish](./images/example_post_es.png)
+![Blog en español](./images/example_post_es.png)
 
-##### Blog English visualization
+### Visualización del blog en inglés
 
-![Blog English](./images/example_post_en.png)
+![Blog en inglés](./images/example_post_en.png)
 
-##### Blog
+### Entrada del blog
 
-![Blog](./images/example_post.png)
-
+![Entrada del blog](./images/example_post.png)
