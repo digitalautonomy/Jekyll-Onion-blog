@@ -1,20 +1,20 @@
 ---
 layout: post
-title: A beautiful title
+title: Un título atractivo
 picture: /assets/images/posts/description-image.idiom.png
 toc: false
 ---
 
-Change the title tag (UP) with the title or your post.
+Cambie la etiqueta `title` con el título de su entrada.
 
-Change the picture tag (UP) with the picture of your post that must be stored in `/assets/images/post`. If your images have 
-Spanish and English version, use an identifier in the name of the image file, like `this-is-my-image.en.png` and
-`this-is-my-image.es.png`.
+Cambie la etiqueta `picture` con la imagen de su entrada. La imagen debe estar en `/assets/images/posts`. Si sus imágenes son distintas en las versiones en español e inglés de la entrada, use un identificador en el nombre de cada imagen, como `this-is-my-image.en.png` y `this-is-my-image.es.png`.
 
-If your do not set a picture for your post, this will take a predefine picture (`generic-pic-post.jpg`).
+Si no se pone una imagen para una entrada, se pondrá una imagen predefinida (`generic-pic-post.jpg`).
 
-Put here the content of your post. Remember to use markdown sintaxis, you can review about markdown sintaxis
-[here](https://www.markdownguide.org/basic-syntax).
+Aquí va el contenido de la entrada. Recuerde usar la sintaxis de Markdown, que puede revisarse [aquí](https://www.markdownguide.org/basic-syntax) (en inglés).
 
-To put images into your post use the follow sintaxis `![alternative title](/assets/images/post/your-image.png)`. All the
-images that you use in your post mush be stored in the `/assets/images/post/` directory.
+Para poner imágenes en la entrada use la siguiente sintaxis:
+
+`![título alternativo](/assets/images/post/imagen.png)`
+
+Todas las imágenes que use en la entrada deben estar guardadas en el directorio `/assets/images/post/`.
