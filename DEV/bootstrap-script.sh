@@ -16,7 +16,7 @@ cat << END
   continuar con la instalación y configuración de su blog Jekyll
   sobre Tor.
 
-  ¡Esto tomará unos instantes!
+  ¡Esto tomará unos instantes!.
 +-------------------------------------------------------------------+
 END
 
@@ -39,12 +39,14 @@ su -c "$dev_dir/install-tor.sh && $dev_dir/config-ssh-over-tor.sh"
 ssh_hostname=`cat /tmp/ssh_hostname`
 
 cat << END
-+---------------------------------------------------------+
-  Se ha configurado una manera más segura para continuar con el proceso de instalación.
++-------------------------------------------------------------------+
+  Se ha configurado una manera más segura para continuar con el
+  proceso de instalación.
+
   Por favor copie el siguiente comando y siga las instrucciones.
 
-  ¡No comparta este comando con nadie!
+  ¡No comparta este comando con nadie!.
 
      torify ssh -t $USER@$ssh_hostname "$dev_dir/second_stage.sh"
-+---------------------------------------------------------+
++-------------------------------------------------------------------+
 END

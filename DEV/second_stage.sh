@@ -11,7 +11,7 @@ cat << END
   Se iniciará el proceso de instalación y configuración de su
   servidor de Jekyll sobre Tor.
 
-  ¡Esto tomará unos instantes!
+  ¡Esto tomará unos instantes!.
 
   Por favor introduzca la contraseña del usuario administrador (root).
 +---------------------------------------------------------------------+
